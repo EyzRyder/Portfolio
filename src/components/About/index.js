@@ -1,6 +1,4 @@
-import AnimatedLetters from '../AnimatedLetters'
-import './index.scss'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { useState } from 'react'
 import {
     faAngular,
     faCss3,
@@ -9,27 +7,35 @@ import {
     faJsSquare,
     faReact,
 } from '@fortawesome/free-brands-svg-icons'
+import Loader from 'react-loaders'
+import AnimatedLetters from '../AnimatedLetters'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import './index.scss'
 
 const About = () => {
+    const [letterClass, setLetterClass] = useState('text-animate')
+
     return (
         <>
-        <div className='container about-page'>
-            <div className='text-zone'>
-                <h1>
-                    <AnimatedLetters
-                        strArray={['A', 'b', 'o', 'u', 't', ' ', 'm', 'e']}
-                        idx={15} 
-                    />
-                </h1>
-                <p>
-                    Sou Gabriel Bessi, no momento estou estudando na Etec Albert Einstein aprendendo programação na escola.
-                    Sou um grande fã de desenvolvimento de sites, dispositivos móveis e bancos de dados
-                    Estou trabalhando para ser um grande programador e artista :]
-                    Você pode ver mais sobre minhas habilidades aqui.
+            <div className="container about-page">
+                <div className="text-zone">
+                    <h1>
+                        <AnimatedLetters
+                            letterClass={letterClass}
+                            strArray={['A', 'b', 'o', 'u', 't', ' ', 'm', 'e']}
+                            idx={15}
+                        />
+                    </h1>
+                    <p>
+                        Sou Gabriel Bessi, no momento estou estudando na Etec Albert Einstein aprendendo programação na escola.
+                        Sou um grande fã de desenvolvimento de sites, dispositivos móveis e bancos de dados
+                        Estou trabalhando para ser um grande programador e artista :]
+                        Você pode ver mais sobre minhas habilidades aqui.
                     </p>
                 </div>
-                <div className='stage-cube-cont'>
-                    <div className='cubespinner'>
+
+                <div className="stage-cube-cont">
+                    <div className="cubespinner">
                         <div className="face1">
                             <FontAwesomeIcon icon={faAngular} color="#DD0031" />
                         </div>
@@ -51,7 +57,7 @@ const About = () => {
                     </div>
                 </div>
             </div>
-            
+            <Loader type="pacman" />
         </>
     )
 }
