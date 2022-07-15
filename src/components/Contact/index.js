@@ -1,9 +1,8 @@
 import './index.scss'
 import Loader from 'react-loaders'
 import AnimatedLetters from '../AnimatedLetters'
-import emailjs from '@emailjs/browser'
-import { useRef } from 'react'
 import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet'
+import { useEffect, useState } from 'react'
 
 
 
@@ -30,16 +29,23 @@ const Contact = () => {
                 }
             )
     }*/
+    const [letterClass, setLetterClass] = useState('text-animate');
+    useEffect(() => {
+        const timer = setTimeout(() => {
+            setLetterClass('text-animate-hover');
+        }, 3000);
+        return () => {
+            clearTimeout(timer);
+        }
+    });
 
     return (
         <>
+            
             <div className='container contact-page'>
                 <div className='text-zone'>
                     <h1>
-                        <AnimatedLetters
-                            strArray={['C', 'o', 'n', 't', 'a', 'c', 't', ' ', 'm', 'e']}
-                            idx={15}
-                        />
+                        <AnimatedLetters letterClass={letterClass} strArray={'Contate-me'.split("")} idx={15} />
                     </h1>
                     <p>
                         Estou interessado em oportunidades freelance. No entanto, se você tiver outra solicitação ou pergunta, não hesite em entrar em contato comigo usando o formulário abaixo.
@@ -96,7 +102,6 @@ const Contact = () => {
                     <br />
                     Brasil,
                     <br />
-                    aluguma rua 620,49 <br />
                     São Paulo <br />
                     <span>gabriel.bessi4@outlook.com</span>
                 </div>
