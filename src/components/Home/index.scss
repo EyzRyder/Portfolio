@@ -6,6 +6,7 @@
     transform: translateY(-50%);
     width: 40%;
     max-height: 90%;
+  z-index: 1;
   }
 
   h1 {
@@ -42,7 +43,7 @@
     img {
       margin-left: 20px;
       opacity: 0;
-      width: 32px;
+      width: 25px;
       height: auto;
       animation: rotateIn 1s linear both;
       animation-delay: 1.4s;
@@ -79,3 +80,25 @@
     }
   }
 }
+.logo-container {
+  position: absolute;
+  width: 400px;
+  height: 600px;
+  top: 0;
+  right: 20%;
+  bottom: 0;
+  left: auto;
+  margin: auto;
+z-index: 0;
+
+  .solid-logo {
+      position: absolute;
+      top: auto;
+      right: auto;
+      bottom: auto;
+      left: 0;
+      margin: auto;
+      width: 100%;
+      transform: rotateZ(-15deg) !important;
+    }
+  } 
