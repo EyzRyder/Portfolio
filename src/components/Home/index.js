@@ -37,13 +37,7 @@ const Home = () => {
           <h2>Estudante/Desenhista/Programador</h2>
           <Link to="/contact" className='flat-button'>Contate-Me</Link>
         </div>
-        <div className="logo-container">
-          <img
-            className="solid-logo"
-            src={LogoGB}
-            alt="Logo"
-          />
-        </div>
+        
         <div className="flags">
           <svg xmlns="http://www.w3.org/2000/svg" width="606" height="127" viewBox="0 0 606 127" fill="none">
             <path d="M2 85.0296C9.55791 81.7882 16.6601 78.564 23.3551 75.3575C75.2026 50.5249 102.625 26.7498 128.107 4.25967M177.337 0C215.225 83.1998 492.418 107.246 602.502 4.25967" stroke="black" stroke-width="10" />
@@ -74,7 +68,15 @@ const Home = () => {
             <path d="M180.286 138.406C195.746 90.4394 173.505 67.2397 160.452 61.6357C145.174 57.9823 110.523 61.536 94.1423 104.979C77.7614 148.422 101.425 173.883 115.305 181.184C130.524 186.911 164.826 186.373 180.286 138.406Z" fill="#173D75" stroke="#115173" stroke-width="3" />
           </svg>
         </div>
+        <div className='bg'>
+          <img
+            className="solid-logo"
+            src={LogoGB}
+            alt="Logo"
+          />
+        </div>
       </div>
+      
       <Loader type="pacman" />
     </>
   );
