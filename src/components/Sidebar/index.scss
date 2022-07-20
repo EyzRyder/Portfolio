@@ -168,28 +168,29 @@ span {
     span.bottom {
       bottom: 0;
     }
-    #cross{
-      span.top {
-          transform: rotate(45deg);
-          transform-origin: top left;
-          width: 48px;
-          left: 5px;
-        }
       
-        span.bottom {
-          transform: rotate(-45deg);
-          transform-origin: top left;
-          width: 48px;
-          bottom: -1px;
-          box-shadow: 0 0 10px #495057;
-        }
-      
-        span.middle {
-          transform: translateX(-20px);
-          opacity: 0;
-        }
-    }
+}
 
+#mobile-link.cross {
+  span.top {
+    transform: rotate(45deg);
+    transform-origin: top left;
+    width: 48px;
+    left: 5px;
+  }
+
+  span.bottom {
+    transform: rotate(-45deg);
+    transform-origin: top left;
+    width: 48px;
+    bottom: -1px;
+    box-shadow: 0 0 10px #495057;
+  }
+
+  span.middle {
+    transform: translateX(-20px);
+    opacity: 0;
+  }
 }
 
 @media (max-width: 960px) {

@@ -13,10 +13,14 @@ const Sidebar = () => {
 
   function myFunction() {
     var x = document.getElementById("nav-itens");
+    var y = document.getElementById("mobile-link");
+
     if (x.className.indexOf("show") == -1) {
       x.className += "show";
+      y.className += "cross";
     } else {
       x.className = x.className.replace("show", "");
+      y.className = y.className.replace("cross", "");
     }
   }
 
