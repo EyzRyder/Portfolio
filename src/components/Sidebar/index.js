@@ -9,7 +9,10 @@ import {
   faGithub,
 } from '@fortawesome/free-brands-svg-icons'
 
-const Sidebar = () => (
+const Sidebar = () => {
+  return(
+        
+  
   <div className='nav-bar'>
     <Link className='logo' to='/'>
       <img src={LogoGB} alt='logo' />
@@ -18,7 +21,8 @@ const Sidebar = () => (
         src={LogoSubtitle}
         alt='Gabriel Bessi' />
     </Link>
-    <nav>
+    
+    <nav className="list">
       <NavLink
         exact="true"
         activeclassname="active"
@@ -62,7 +66,7 @@ const Sidebar = () => (
       </li>
     </ul>
   </div>
-)
+)}
 
 
 export default Sidebar;
