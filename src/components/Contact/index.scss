@@ -90,31 +90,6 @@
   animation-fill-mode: forwards;
 }
 
-.info-map {
-  position: absolute;
-  background: #115173;
-  top: 50px;
-  right: 30%;
-  z-index: 999999;
-  width: 267px;
-  padding: 20px;
-  color: #fff;
-  font-family: "Open Sans", "Helvetica", Arial, sans-serif;
-  font-size: 17px;
-  font-weight: 300;
-  opacity: 0;
-  animation: fadeIn 1s 1.5s;
-  animation-fill-mode: forwards;
-
-  span {
-    font-size: 16px;
-
-    span {
-      color: #ffd700;
-    }
-  }
-}
-
 @media (max-width: 1024px) {
   .inf-map {
   top: -10px;

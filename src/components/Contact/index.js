@@ -98,14 +98,6 @@ const Contact = () => {
             </form>
           </div>
         </div>
-        <div className='info-map'>
-          Gabriel Bessi
-          <br />
-          Brasil,
-          <br />
-          São Paulo <br />
-          <span>gabriel.bessi4@outlook.com</span>
-        </div>
         <div className='map-wrap'>
           <MapContainer center={[-23.5071996, -46.689129]} zoom={13}>
             <TileLayer

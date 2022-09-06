@@ -263,7 +263,18 @@ span {
     float: left;
     padding: 2px 0;
     margin-right: 20px;
+    display: block;
+img {
+  margin: 0;
+    width: 34px;
+    height: auto;
+
+    &.sub-logo {
+      display: none;
+    }
   }
+  
+}
 }
 
 @media (max-width: 530px) {

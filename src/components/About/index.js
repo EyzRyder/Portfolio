@@ -81,8 +81,8 @@ const About = () => {
             </div>
           </p>
         </div>
-
-        <div className="stage-cube-cont">
+        <div className="stage">
+          <div className="stage-cube-cont">
           <div className="cubespinner">
             <div className="face1">
               <FontAwesomeIcon icon={faAngular} color="#DD0031" />
@@ -102,6 +102,7 @@ const About = () => {
             <div className="face6">
               <FontAwesomeIcon icon={faPhp} color="#8892bf" />
             </div>
+          </div>
           </div>
         </div>
       </div>
