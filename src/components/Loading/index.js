@@ -6,10 +6,10 @@ const Loader = () => {
         <>
         <div className ="loader-active">
             <div id="preload-juggle">
-                <div class="balls"></div>
-                <div class="balls"></div>
-                <div class="balls"></div>
-                <div class="balls"></div>
+                <div className="balls"></div>
+                    <div className="balls"></div>
+                    <div className="balls"></div>
+                    <div className="balls"></div>
             </div>
             <svg xmlns="http://www.w3.org/2000/svg" width="320" height="109" viewBox="0 0 650 139" fill="none">
                 <path

@@ -15,7 +15,7 @@ const Sidebar = () => {
     var x = document.getElementById("nav-itens");
     var y = document.getElementById("mobile-link");
 
-    if (x.className.indexOf("show") == -1) {
+    if (x.className.indexOf("show") === -1) {
       x.className += "show";
       y.className += "cross";
     } else {
@@ -79,10 +79,10 @@ const Sidebar = () => {
         </a>
       </li>
       </ul>
-      <a id="mobile-link" href="javascript:void(0)" onClick={myFunction}>
-        <span class="top"></span>
-        <span class="middle"></span>
-        <span class="bottom"></span>
+      <a id="mobile-link" href="/#" onClick={myFunction}>
+        <span className="top"></span>
+        <span className="middle"></span>
+        <span className="bottom"></span>
       </a>
   </div>
 )}
