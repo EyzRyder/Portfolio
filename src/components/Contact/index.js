@@ -98,6 +98,7 @@ const Contact = () => {
             </form>
           </div>
         </div>
+
         <div className='map-wrap'>
           <MapContainer center={[-23.5071996, -46.689129]} zoom={13}>
             <TileLayer
@@ -106,7 +107,7 @@ const Contact = () => {
             <Marker
               position={[-23.5071996, -46.689129]}>
               <Popup>
-                Eu moro por aqui
+                Aqui é um lugar
               </Popup>
             </Marker>
           </MapContainer>
