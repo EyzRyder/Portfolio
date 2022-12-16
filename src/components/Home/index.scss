@@ -6,7 +6,7 @@
     transform: translateY(-50%);
     width: 40%;
     max-height: 90%;
-  z-index: 1;
+    z-index: 1;
   }
 
   h1 {
@@ -58,101 +58,55 @@
   }
 }
 
-    .flags {
-      position: absolute;
-      top: -40px;
-      left: 50px;
-      opacity: 0.6;
-    }
-
-    .flag2{
-      position: absolute;
-        top: -40px;
-        left: 90%;
-        opacity: 0.6;
-    }
-
-.light {
-    position: absolute;
-    bottom: -40px;
-    left: 85%;
+.flags {
+  position: absolute;
+  top: -40px;
+  left: 50px;
+  opacity: 0.6;
 }
 
-    .bg {
+.flag2 {
+  position: absolute;
+  top: -40px;
+  left: 90%;
+  opacity: 0.6;
+}
+
+.light {
+  position: absolute;
+  bottom: -40px;
+  left: 85%;
+}
+
+.bg {
+  position: absolute;
+  width: 500px;
+  height: 600px;
+  top: 0;
+  right: 15%;
+  bottom: 0;
+  left: auto;
+  margin: auto;
+  z-index: 0;
+
+  .solid-logo {
     position: absolute;
-    width: 500px;
-    height: 600px;
-      top: 0;
-      right: 15%;
-      bottom: 0;
-      left: auto;
-      margin: auto;
-      z-index: 0;
-        .solid-logo {
-            position: absolute;
-            top: auto;
-            right: auto;
-            bottom: auto;
-            left: 0;
-            margin: auto;
-            width: 100%;
-            transform: rotateZ(-15deg) !important;
-            z-index: 0;
-          }
-    }
-
-// @media (max-width: 530px){
-//   .home-page .text-zone {
-//     width: 85%;
-//     left: 5%;
-// }}
-
-// @media (max-width: 750px) {
-//     .home-page .text-zone {
-//         top: 0px;
-//       }
-//   h1 {
-//   font-size: 47px !important;
-//   line-height: 40px !important;
-// }}
-
-// @media (max-width: 960px) {
-//   .home-page .text-zone {
-//       top: 0px;
-//     }
-//   .bg {
-//   right: 0;
-//   left: 0;
-//   opacity: .5;
-// }
-// }
-
-// @media (max-width:1024px){
-//   h1 {
-//       font-size: 54px !important;
-//       line-height: 45px;
-//     }
-//   .home-page{
-//     .text-zone {
-//       width: 80%;
-//       min-height: 0;
-//       }
-//     }
-//     .flags{
-//     top: -50px;
-//     }
-//     .flag2 {
-//     display: none;
-//     }
-//         .bg {
-//           width: 350px;
-//           height: 350px;
-//         }
-// }
+    top: auto;
+    right: auto;
+    bottom: auto;
+    left: 0;
+    margin: auto;
+    width: 100%;
+    transform: rotateZ(-15deg) !important;
+    z-index: 0;
+  }
+}
 
 @media screen and (max-width: 1200px) {
 
-  .flags, .flag2, .light {
+  .flags,
+  .flag2,
+  .light {
     display: none;
   }
 
@@ -173,21 +127,22 @@
 
   .bg {
     position: relative;
-    width: 100px;
+    width: 300px;
     height: auto;
-    top: 50px;
+    top: -25px;
     right: 0;
     box-sizing: border-box;
     margin: auto;
     left: 0;
-  }
+    z-index: -1;
+}
 
-  .bg svg {
-    position: absolute;
-    top: auto;
-    right: auto;
-    bottom: auto;
-    left: 0;
-    margin: auto;
-  }
+.bg svg {
+  position: absolute;
+  top: auto;
+  right: auto;
+  bottom: auto;
+  left: 0;
+  margin: auto;
+}
 }
