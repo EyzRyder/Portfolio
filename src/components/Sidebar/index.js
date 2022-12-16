@@ -3,63 +3,77 @@ import './index.scss';
 import LogoGB from '../../assets/images/GB SVG.svg'
 import LogoSubtitle from '../../assets/images/logo_sub2.png'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faHome, faUser, faEnvelope, faSuitcase } from '@fortawesome/free-solid-svg-icons';
+import {
+  faHome, faUser, faEnvelope, faSuitcase, faBars,
+  faClose, } from '@fortawesome/free-solid-svg-icons';
 import {
   faLinkedin,
   faGithub,
 } from '@fortawesome/free-brands-svg-icons'
+import { useState } from 'react';
 
 const Sidebar = () => {
-
-  function myFunction() {
-    var x = document.getElementById("nav-itens");
-    var y = document.getElementById("mobile-link");
-
-    if (x.className.indexOf("show") === -1) {
-      x.className += "show";
-      y.className += "cross";
-    } else {
-      x.className = x.className.replace("show", "");
-      y.className = y.className.replace("cross", "");
-    }
-  }
+  const [showNav, setShowNav] = useState(false);
 
   return(
         
   
   <div className='nav-bar'>
-    <Link className='logo' to='/'>
-      <img src={LogoGB} alt='logo' />
+      <Link
+        className='logo'
+        to='/'
+        onClick={() => setShowNav(false)}
+      >
+        <img
+          src={LogoGB}
+          alt='logo' />
       <img
         className="sub-logo"
         src={LogoSubtitle}
         alt='Gabriel Bessi' />
     </Link>
     
-    <nav id="nav-itens">
+      <nav className={showNav ? 'mobile-show' : ''}>
       <NavLink
         exact="true"
         activeclassname="active"
-        to="/" >
+          to="/"
+          onClick={() => setShowNav(false)}>
         <FontAwesomeIcon icon={faHome} color="#4d4d4e" />
-      </NavLink>
+        </NavLink>
+        
       <NavLink
         exact="true"
         activeclassname="active"
         className="about-link"
-        to="/about" >
+          to="/about"
+          onClick={() => setShowNav(false)}>
         <FontAwesomeIcon icon={faUser} color="#4d4d4e" />
-      </NavLink>
-      <NavLink activeclassname="active" className="portfolio-link" to="/portfolio">
+        </NavLink>
+        
+        <NavLink
+          activeclassname="active" className="portfolio-link"
+          to="/portfolio"
+          onClick={() => setShowNav(false)}>
         <FontAwesomeIcon icon={faSuitcase} color="#4d4d4e" />
-      </NavLink>
+        </NavLink>
+        
       <NavLink
         exact="true"
         activeclassname="active"
         className="contact-link"
-        to="/contact" >
+          to="/contact"
+          onClick={() => setShowNav(false)}>
         <FontAwesomeIcon icon={faEnvelope} color="#4d4d4e" />
-      </NavLink>
+        </NavLink>
+        
+        <FontAwesomeIcon
+          onClick={() => setShowNav(false)}
+          icon={faClose}
+          color="#ffd700"
+          size="3x"
+          className='close-icon' />
+        
     </nav>
     <ul>
       <li>
@@ -79,11 +93,12 @@ const Sidebar = () => {
         </a>
       </li>
       </ul>
-      <a id="mobile-link" href="/#" onClick={myFunction}>
-        <span className="top"></span>
-        <span className="middle"></span>
-        <span className="bottom"></span>
-      </a>
+      <FontAwesomeIcon
+        onClick={() => setShowNav(true)}
+        icon={faBars}
+        color="#ffd700"
+        size="3x"
+        className='hamburger-icon' />
   </div>
 )}
 
