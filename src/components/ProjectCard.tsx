@@ -1,11 +1,10 @@
 'use client'
 
 import { GithubIcon } from 'lucide-react'
-import Image from 'next/image'
-import img from '@/assets/Banner.png'
+import Image, { StaticImageData } from 'next/image'
 import { Tilt } from 'react-tilt'
-import { CSSProperties } from 'react'
-import useMousePosition from '@/useHook/useMousePosition'
+import { CSSProperties, useEffect, useState } from 'react'
+// import useMousePosition from '@/useHook/useMousePosition'
 
 const defaultOptions = {
   reverse: true,
@@ -19,8 +18,30 @@ const defaultOptions = {
   easing: 'cubic-bezier(.03,.98,.52,.99)',
 }
 
-export default function ProjectCard() {
-  // const follow = useRef<HTMLDivElement>()
+interface WorkProps {
+  coverImg: string | StaticImageData
+  title: string
+  role: string
+  teck: string[]
+  descriptions: string
+}
+
+const useMousePosition = () => {
+  const [mousePosition, setMousePosition] = useState({ x: null, y: null })
+  useEffect(() => {
+    const updateMousePosition = (ev: any) => {
+      setMousePosition({ x: ev.pageX, y: ev.pageY })
+    }
+    // window.addEventListener('pointermove', updateMousePosition)
+    window.addEventListener('mousemove', updateMousePosition)
+    return () => {
+      window.removeEventListener('mousemove', updateMousePosition)
+    }
+  }, [])
+  return mousePosition
+}
+
+export default function ProjectCard(props: WorkProps) {
   const { x, y } = useMousePosition() as unknown as {
     x: number
     y: number
@@ -33,19 +54,18 @@ export default function ProjectCard() {
     <div className="card">
       <div className="details" style={frameStyle}>
         <div className="head">
-          <span>Portfolio</span>
-          <span>Role:Program & UI/UX</span>
+          <span>{props.title}</span>
+          <span>Role: {props.role}</span>
         </div>
         <div className="content">
           <div className="badgeList">
-            <span className="badge">Next.js</span>
-            <span className="badge">Tailwind</span>
+            {props.teck.map((t: string) => (
+              <span className="badge" key={t}>
+                {t}
+              </span>
+            ))}
           </div>
-          <p>
-            Aqui futuramente tera o link para a taualizacao do meu portfolio.
-            Fiz esse card para testar um componente do meu portfolio e que bom
-            que deu certo.
-          </p>
+          <p>{props.descriptions}</p>
         </div>
       </div>
       <div className="frame">
@@ -53,33 +73,10 @@ export default function ProjectCard() {
           <a href="https://github.com/EyzRyder" className="git">
             <GithubIcon />
           </a>
-          <Image src={img} alt="image" className="cover" />
+          <Image src={props.coverImg} alt="image" className="cover" />
         </Tilt>
         <div className="Wrapper"></div>
       </div>
     </div>
   )
 }
-
-/*
-      <div
-        className="frame"
-        onMouseOut={() => {
-          if (!follow.current) return
-          follow.current.style.display = 'none'
-        }}
-        onMouseOver={() => {
-          if (!follow.current) return
-          follow.current.style.display = 'block'
-        }}
-      >
-              <Tilt
-          options={defaultOptions}
-          style={{ height: '100%', width: '100%' }}
-        >
-          <a href="https://github.com/EyzRyder" className="git">
-            <GithubIcon className="absolute right-6 top-5 hidden" />
-          </a>
-          <Image src={img} alt="image" className="bannerImg" />
-        </Tilt>
-*/
