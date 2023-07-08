@@ -1,5 +1,7 @@
 'use client'
 
+import { useEffect, useRef, useState } from 'react'
+import { motion } from 'framer-motion'
 import ProjectCard from './ProjectCard'
 import img from '@/assets/Banner.png'
 const data = [
@@ -45,20 +47,38 @@ const data = [
   },
 ]
 export default function WorkList() {
-  // const track = useRef<HTMLDivElement>(null)
-
+  const carousel = useRef<HTMLDivElement>(null)
+  const [width, setWidth] = useState(0)
+  useEffect(() => {
+    if (!carousel.current) return
+    console.log(carousel.current?.scrollWidth)
+    setWidth(carousel.current?.scrollWidth - carousel.current?.offsetWidth)
+  }, [])
   return (
-    <div className="flex items-center gap-24 px-[5rem] py-12">
-      {data.map((work) => (
-        <ProjectCard
-          title={work.title}
-          coverImg={work.coverImg}
-          descriptions={work.description}
-          role={work.role}
-          teck={work.teck}
-          key={work.title}
-        />
-      ))}
-    </div>
+    <motion.div
+      ref={carousel}
+      whileTap={{ cursor: 'grabbing' }}
+      className="cursor-grab overflow-hidden px-[5rem] py-12 "
+    >
+      <motion.div
+        drag="x"
+        dragConstraints={{ right: width, left: -width }}
+        initial={{ x: 300 }}
+        animate={{ x: 0 }}
+        transition={{ duration: 0.8 }}
+        className="flex gap-24"
+      >
+        {data.map((work) => (
+          <ProjectCard
+            title={work.title}
+            coverImg={work.coverImg}
+            descriptions={work.description}
+            role={work.role}
+            teck={work.teck}
+            key={work.title}
+          />
+        ))}
+      </motion.div>
+    </motion.div>
   )
 }
