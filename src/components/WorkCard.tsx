@@ -41,7 +41,7 @@ export default function WorkCard({
         rest.className,
       )}
     >
-      <div className="frame relative h-full w-full group-hover/card:cursor-pointer">
+      <div className="frame relative h-full w-full">
         <Tilt
           options={defaultOptions}
           className="tilt grid h-full w-full place-content-center group-hover/card:absolute group-hover/card:z-[2]"

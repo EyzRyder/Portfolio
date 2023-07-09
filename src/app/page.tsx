@@ -1,12 +1,25 @@
 import Image from 'next/image'
+import { GithubIcon, LinkedinIcon, InstagramIcon } from 'lucide-react'
+
+// SVGS
 import logo from '@/assets/mainLogo.svg'
 import wave1 from '@/assets/wave1.svg'
 import wave2 from '@/assets/wave2.svg'
 import wave3 from '@/assets/wave3.svg'
 import wave4 from '@/assets/wave4.svg'
 import reactLogo from '@/assets/logo-react.svg'
+import csharpLogo from '@/assets/language-csharp.svg'
+import nodeLogo from '@/assets/logo-nodejs.svg'
+import htmlLogo from '@/assets/logo-html-5.svg'
+import cssLogo from '@/assets/logo-css-3.svg'
+import jsLogo from '@/assets/logo-javascript.svg'
+import tsLogo from '@/assets/typescript-logo.svg'
+import ionicLogo from '@/assets/logo-ionic.svg'
+import sassLogo from '@/assets/logo-sass.svg'
+import tailwindLogo from '@/assets/tailwind.svg'
+
+// Componets
 import ContactForm from '@/components/ContactForm'
-import { GithubIcon, LinkedinIcon, InstagramIcon } from 'lucide-react'
 import Carousel from '@/components/Carousel'
 import Logoicons from '@/components/Logoicons'
 
@@ -64,21 +77,61 @@ export default function Home() {
         </div>
 
         <Logoicons
-          name="React"
+          name="React.js"
           img={reactLogo}
           className="left-[30%] top-[10%] "
         />
 
         <Logoicons
-          name="React"
-          img={reactLogo}
+          name="Node.js"
+          img={nodeLogo}
           className="left-[20%] top-[20%] "
         />
 
         <Logoicons
-          name="React"
-          img={reactLogo}
+          name="C#"
+          img={csharpLogo}
           className="left-[10%] top-[15%] "
+        />
+        <Logoicons
+          name="Javascript"
+          img={jsLogo}
+          className="right-[30%] top-[10%] "
+        />
+
+        <Logoicons
+          name="Typescript"
+          img={tsLogo}
+          className="right-[20%] top-[5%] "
+        />
+
+        <Logoicons
+          name="Ionic"
+          img={ionicLogo}
+          className="right-[10%] top-[8%] "
+        />
+
+        <Logoicons
+          name="Css"
+          img={cssLogo}
+          className="bottom-[10%] left-[20%] "
+        />
+
+        <Logoicons
+          name="Html"
+          img={htmlLogo}
+          className="bottom-[8%] left-[10%] "
+        />
+        <Logoicons
+          name="Sass"
+          img={sassLogo}
+          className="bottom-[18%] right-[20%] "
+        />
+
+        <Logoicons
+          name="Tailwindcss"
+          img={tailwindLogo}
+          className="bottom-[20%] right-[10%] "
         />
         <Image
           src={wave3}
