@@ -4,9 +4,11 @@ import wave1 from '@/assets/wave1.svg'
 import wave2 from '@/assets/wave2.svg'
 import wave3 from '@/assets/wave3.svg'
 import wave4 from '@/assets/wave4.svg'
+import reactLogo from '@/assets/logo-react.svg'
 import ContactForm from '@/components/ContactForm'
 import { GithubIcon, LinkedinIcon, InstagramIcon } from 'lucide-react'
-import WorkList from '@/components/WorkList'
+import Carousel from '@/components/Carousel'
+import Logoicons from '@/components/Logoicons'
 
 export default function Home() {
   return (
@@ -49,9 +51,9 @@ export default function Home() {
           <Image
             src="https://avatars.githubusercontent.com/u/85580011?v=4"
             alt="ME"
-            width={144}
-            height={144}
-            className="rounded-full"
+            width={154}
+            height={154}
+            className="rounded-full shadow-lg shadow-primary-tint"
           />
           <p className="text-justify text-lg">
             No momento estou estudando na Etec Albert Einstein aprendendo
@@ -60,6 +62,24 @@ export default function Home() {
             trabalhando para ser um grande programador e artista {':]'}.
           </p>
         </div>
+
+        <Logoicons
+          name="React"
+          img={reactLogo}
+          className="left-[30%] top-[10%] "
+        />
+
+        <Logoicons
+          name="React"
+          img={reactLogo}
+          className="left-[20%] top-[20%] "
+        />
+
+        <Logoicons
+          name="React"
+          img={reactLogo}
+          className="left-[10%] top-[15%] "
+        />
         <Image
           src={wave3}
           alt="wave"
@@ -71,8 +91,8 @@ export default function Home() {
         className="flex h-screen flex-col items-center gap-3 space-y-5 overflow-hidden"
       >
         <h1 className="font-alt text-5xl text-primary">Portfolio</h1>
-        <p className="underline">Ver mais {'>>'}</p>
-        <WorkList />
+        {/* <p className="underline">Ver mais {'>>'}</p> */}
+        <Carousel />
         {/*
         <div>
           <span>WEB</span>
