@@ -15,7 +15,7 @@ Esse é meu portfolio ele passou por tantas fazes e mudanças, e isso mostra o m
 </p>
 
 <p align="center">
-  <img alt="projeto DevLinks" src="./.github/banner.png" width="100%">
+  <img alt="projeto DevLinks" src="./.github/Banner.png" width="100%">
 </p>
 
 ## 🚀 Tecnologias
