@@ -10,7 +10,7 @@ export default function Logoicons({ img, name, ...rest }: LogoiconsProps) {
   return (
     <div
       className={twMerge(
-        'group absolute z-20 h-[5.625rem] w-[5.625rem] rounded-lg p-[0.125rem] transition-all hover:bg-gradient-to-r hover:from-secondary hover:to-primary',
+        'group z-20 h-[5.625rem] w-[5.625rem] rounded-lg p-[0.125rem] transition-all hover:bg-gradient-to-r hover:from-secondary hover:to-primary max-md:relative max-md:h-[4rem] max-md:w-[4rem] md:absolute',
         rest.className,
       )}
     >

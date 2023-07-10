@@ -25,16 +25,16 @@ import Logoicons from '@/components/Logoicons'
 
 export default function Home() {
   return (
-    <main className="relative z-[1] flex min-h-screen flex-col overflow-x-hidden">
+    <main className="relative z-[1] flex min-h-screen flex-col overflow-x-hidden ">
       <div
         id="home"
-        className="relative grid h-screen w-full grid-cols-2 place-content-center"
+        className="relative grid min-h-screen w-full place-content-center lg:grid-cols-2 "
       >
-        <div className="flex items-center justify-center ">
+        <div className="flex w-full items-center justify-center max-lg:absolute max-lg:left-1/2 max-lg:top-1/2 max-lg:z-[-1] max-lg:-translate-x-1/2 max-lg:-translate-y-1/2 max-lg:opacity-40">
           <Image src={logo} alt="GB Logo" />
         </div>
-        <div className="flex flex-col items-start justify-center gap-4">
-          <h1 className="font-alt text-7xl">
+        <div className="flex flex-col justify-center gap-4 max-md:items-center max-md:px-6 lg:items-start">
+          <h1 className="font-alt text-7xl max-lg:items-center max-md:text-center max-md:text-5xl max-[320px]:text-3xl">
             Ola, Sou <br />
             Gabriel Bessi <br />
             Um{' '}
@@ -42,25 +42,31 @@ export default function Home() {
               Desenvolvedor
             </span>
           </h1>
-          <p className="text-zinc-400">Fullstack Dev / Artista / Estudante</p>
+          <p className="text-zinc-400 max-md:text-center">
+            Fullstack Dev / Artista / Estudante
+          </p>
           <a
             href="#contact"
-            className="rounded-2xl border border-primary-tint bg-transparent px-8 py-4 font-alt text-primary-tint transition-all hover:border-primary hover:bg-secondary hover:text-primary "
+            className="w-fit rounded-2xl border border-primary-tint bg-transparent px-8 py-4 font-alt text-primary-tint transition-all hover:border-primary hover:bg-secondary hover:text-primary"
           >
             Contate-me
           </a>
         </div>
-        <Image src={wave1} alt="wave" className="absolute" />
-        <Image src={wave2} alt="wave" className="absolute bottom-0 right-0" />
+        <Image src={wave1} alt="wave" className="absolute z-[-1]" />
+        <Image
+          src={wave2}
+          alt="wave"
+          className="absolute bottom-0 right-0  z-[-1]"
+        />
       </div>
       <div
         id="about"
-        className="relative flex h-screen flex-col items-center justify-center"
+        className="relative flex min-h-screen flex-col items-center justify-center"
       >
         <h1 className="z-10 mb-3 flex items-center justify-center rounded-2xl border-2 border-primary-tint bg-gradient-to-r from-bg-main via-secondary to-bg-main px-3 py-2 text-center font-alt text-5xl text-primary">
           Sobre mim
         </h1>
-        <div className="z-10 flex w-[30rem] flex-col items-center justify-center gap-3 rounded-2xl border-2 border-primary-tint bg-gradient-to-r from-bg-main via-secondary to-bg-main px-6 py-4">
+        <div className="z-10 flex w-[30rem] flex-col items-center justify-center gap-3 rounded-2xl border-2 border-primary-tint bg-gradient-to-r from-bg-main via-secondary to-bg-main px-6 py-4 max-sm:w-[20rem] max-[320px]:w-[15rem]">
           <Image
             src="https://avatars.githubusercontent.com/u/85580011?v=4"
             alt="ME"
@@ -68,71 +74,72 @@ export default function Home() {
             height={154}
             className="rounded-full shadow-lg shadow-primary-tint"
           />
-          <p className="text-justify text-lg">
+          <p className="text-justify text-lg max-md:text-base">
             No momento estou estudando na Etec Albert Einstein aprendendo
             desenvolvimento de sistemas na escola. Sou um grande fã de
             desenvolvimento de sites, dispositivos móveis e bancos de dados
             trabalhando para ser um grande programador e artista {':]'}.
           </p>
         </div>
+        <div className="max-md:flex max-md:flex-wrap max-md:items-center max-md:justify-center max-md:px-3 max-md:py-2">
+          <Logoicons
+            name="React.js"
+            img={reactLogo}
+            className="md:left-[30%] md:top-[10%] "
+          />
 
-        <Logoicons
-          name="React.js"
-          img={reactLogo}
-          className="left-[30%] top-[10%] "
-        />
+          <Logoicons
+            name="Node.js"
+            img={nodeLogo}
+            className="md:left-[20%] md:top-[15%]  "
+          />
 
-        <Logoicons
-          name="Node.js"
-          img={nodeLogo}
-          className="left-[20%] top-[20%] "
-        />
+          <Logoicons
+            name="CSharp"
+            img={csharpLogo}
+            className="md:left-[10%] md:top-[12%] "
+          />
+          <Logoicons
+            name="Javascript"
+            img={jsLogo}
+            className="md:right-[30%] md:top-[10%] xl:right-[27%]"
+          />
 
-        <Logoicons
-          name="C#"
-          img={csharpLogo}
-          className="left-[10%] top-[15%] "
-        />
-        <Logoicons
-          name="Javascript"
-          img={jsLogo}
-          className="right-[30%] top-[10%] "
-        />
+          <Logoicons
+            name="Typescript"
+            img={tsLogo}
+            className="md:right-[20%] md:top-[5%] xl:right-[19%] "
+          />
 
-        <Logoicons
-          name="Typescript"
-          img={tsLogo}
-          className="right-[20%] top-[5%] "
-        />
+          <Logoicons
+            name="Ionic"
+            img={ionicLogo}
+            className="md:right-[10%] md:top-[6%]  "
+          />
 
-        <Logoicons
-          name="Ionic"
-          img={ionicLogo}
-          className="right-[10%] top-[8%] "
-        />
+          <Logoicons
+            name="Css"
+            img={cssLogo}
+            className="md:bottom-[10%] md:left-[20%]"
+          />
 
-        <Logoicons
-          name="Css"
-          img={cssLogo}
-          className="bottom-[10%] left-[20%] "
-        />
+          <Logoicons
+            name="Html"
+            img={htmlLogo}
+            className="md:bottom-[8%] md:left-[10%]"
+          />
+          <Logoicons
+            name="Sass"
+            img={sassLogo}
+            className="md:bottom-[13%] md:right-[15%] xl:right-[20%] "
+          />
 
-        <Logoicons
-          name="Html"
-          img={htmlLogo}
-          className="bottom-[8%] left-[10%] "
-        />
-        <Logoicons
-          name="Sass"
-          img={sassLogo}
-          className="bottom-[18%] right-[20%] "
-        />
-
-        <Logoicons
-          name="Tailwindcss"
-          img={tailwindLogo}
-          className="bottom-[20%] right-[10%] "
-        />
+          <Logoicons
+            name="Tailwindcss"
+            img={tailwindLogo}
+            className="md:bottom-[17%] md:right-[5%] xl:right-[10%]  "
+          />
+        </div>
         <Image
           src={wave3}
           alt="wave"
@@ -153,33 +160,36 @@ export default function Home() {
         </div>
          */}
       </div>
-      <div id="contact" className="relative grid h-screen grid-cols-2">
-        <div className="z-10 flex flex-col items-center justify-center gap-6">
-          <h1 className="font-alt text-5xl text-primary">
+      <div
+        id="contact"
+        className="relative min-h-screen max-md:mb-24 max-md:flex max-md:flex-col md:grid md:grid-cols-2"
+      >
+        <div className="z-10 flex flex-col items-center justify-center gap-6 max-2xl:ml-8 max-xl:ml-12 max-md:m-0 max-md:w-full max-md:px-4 max-md:py-3 ">
+          <h1 className="text-center font-alt text-5xl text-primary max-xl:text-4xl">
             Entre em contato comigo!
           </h1>
-          <p className="w-[29rem] text-justify">
+          <p className="w-[29rem] text-justify max-xl:w-[20rem] max-md:w-full">
             Estou interessado em oportunidades emprego / freelance. No entanto,
             se você tiver outra solicitação ou pergunta, não hesite em entrar em
             contato comigo usando o formulário abaixo.
           </p>
           <ContactForm />
         </div>
-        <div className="z-10 flex flex-col items-center justify-center gap-3">
+        <div className="z-10 flex flex-col items-center justify-center gap-3  max-md:px-4 max-md:py-3 ">
           <h2 className="font-alt text-4xl text-primary-tint">
             Me adicione nas rede
           </h2>
-          <div className="flex flex-col gap-4">
-            <div className="flex gap-4">
+          <div className="flex flex-col gap-4 ">
+            <div className="flex gap-4 max-sm:px-2">
               <a
-                className="flex w-52 items-center justify-center gap-3 rounded-tl-lg border-l-2 border-t-2 border-primary bg-secondary py-3 hover:bg-opacity-30 hover:text-primary"
+                className="flex w-52 items-center justify-center gap-3 rounded-tl-lg border-l-2 border-t-2 border-primary bg-secondary py-3 hover:bg-opacity-30 hover:text-primary max-sm:w-32 max-sm:px-2 max-sm:text-sm"
                 href="#"
               >
-                <LinkedinIcon className="h-10 w-auto text-inherit" />
+                <LinkedinIcon className="h-10 w-auto text-inherit " />
                 <span>/gabriel-bessi</span>
               </a>
               <a
-                className="flex w-52 items-center justify-center gap-3 rounded-tr-lg border-r-2 border-t-2 border-primary bg-secondary py-3 hover:bg-opacity-30 hover:text-primary"
+                className="flex w-52 items-center justify-center gap-3 rounded-tr-lg border-r-2 border-t-2 border-primary bg-secondary py-3 hover:bg-opacity-30 hover:text-primary max-sm:w-32 max-sm:px-2 max-sm:text-sm"
                 href="#"
               >
                 <svg
@@ -197,16 +207,16 @@ export default function Home() {
                 <span>/EyzRyder</span>
               </a>
             </div>
-            <div className="flex gap-4">
+            <div className="flex gap-4 max-sm:px-2">
               <a
-                className="flex w-52 items-center justify-center gap-3 rounded-bl-lg border-b-2 border-l-2 border-primary bg-secondary py-3 hover:bg-opacity-30 hover:text-primary"
+                className="flex w-52 items-center justify-center gap-3 rounded-bl-lg border-b-2 border-l-2 border-primary bg-secondary py-3 hover:bg-opacity-30 hover:text-primary max-sm:w-32 max-sm:px-2 max-sm:text-sm"
                 href="#"
               >
                 <GithubIcon className="h-10 w-auto text-inherit" />
                 <span>/EyzRyder</span>
               </a>
               <a
-                className="flex w-52 items-center justify-center gap-3 rounded-br-lg border-b-2 border-r-2 border-primary bg-secondary py-3 hover:bg-opacity-30 hover:text-primary"
+                className="flex w-52 items-center justify-center gap-3 rounded-br-lg border-b-2 border-r-2 border-primary bg-secondary py-3 hover:bg-opacity-30 hover:text-primary max-sm:w-32 max-sm:px-2 max-sm:text-sm"
                 href="#"
               >
                 <InstagramIcon className="h-10 w-auto text-inherit" />
@@ -215,8 +225,8 @@ export default function Home() {
             </div>
           </div>
         </div>
-        <Image className="absolute bottom-0 w-full" src={wave4} alt="wave" />
       </div>
+      <Image className="absolute bottom-0 w-full" src={wave4} alt="wave" />
     </main>
   )
 }

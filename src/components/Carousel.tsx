@@ -70,6 +70,7 @@ const data = [
     teck: ['Next.js', 'Tailwind'],
   },
 ]
+
 interface cardType {
   id: string
   title: string
@@ -77,33 +78,49 @@ interface cardType {
   role: string
   teck: string[]
 }
+
+const useWidth = () => {
+  const [screenWidth, setScreenWidth] = useState(window.innerWidth)
+  const handleResize = () => setScreenWidth(window.innerWidth)
+  useEffect(() => {
+    handleResize()
+    window.addEventListener('resize', handleResize)
+    return () => window.removeEventListener('resize', handleResize)
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [])
+  return screenWidth
+}
+
 export default function Carousel() {
   const carousel = useRef<HTMLDivElement>(null)
-  const [width, setWidth] = useState(0)
+  const [carouselWidth, setCarouselWidth] = useState(0)
+  const fullWidth = useWidth()
   const [cardProps, setCardProps] = useState<cardType | null>(null)
 
   useEffect(() => {
+    console.log(fullWidth)
     if (!carousel.current) return
     // console.log(carousel.current?.scrollWidth)
-    setWidth(carousel.current?.scrollWidth - carousel.current?.offsetWidth)
-  }, [])
+    setCarouselWidth(
+      carousel.current?.scrollWidth - carousel.current?.offsetWidth,
+    )
+  }, [fullWidth])
   return (
     <>
       <motion.div
         ref={carousel}
         whileTap={{ cursor: 'grabbing' }}
-        className="w-full cursor-grab overflow-hidden whitespace-nowrap px-2 py-12 "
-        style={{
-          transform: 'skew(-0.02turn, -5deg)',
-        }}
+        className="w-full cursor-grab overflow-hidden whitespace-nowrap px-2 py-12 max-md:overflow-y-scroll  md:-skew-x-[0.02turn] md:-skew-y-6"
       >
         <motion.div
-          drag="x"
-          dragConstraints={{ right: 500, left: -width / 1.2 }}
-          initial={{ x: '100%' }}
-          animate={{ x: 0 }}
+          drag={fullWidth > 768 ? 'x' : false}
+          dragConstraints={
+            fullWidth > 768 && { right: 500, left: -carouselWidth / 1.2 }
+          }
+          initial={fullWidth > 768 ? { x: '100%' } : { y: '100%' }}
+          animate={fullWidth > 768 ? { x: 0 } : { y: 0 }}
           transition={{ duration: 0.8 }}
-          className="flex gap-24"
+          className="flex gap-24 max-md:flex-col max-md:items-center max-md:gap-10 max-[325px]:gap-4"
         >
           {data.map((work) => (
             <WorkCard
@@ -118,7 +135,7 @@ export default function Carousel() {
           ))}
         </motion.div>
       </motion.div>
-      {cardProps && (
+      {fullWidth > 768 && cardProps && (
         <WorkFollowCard
           id={cardProps.id}
           title={cardProps.title}
