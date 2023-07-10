@@ -80,7 +80,7 @@ interface cardType {
 }
 
 const useWidth = () => {
-  const [screenWidth, setScreenWidth] = useState(window.innerWidth)
+  const [screenWidth, setScreenWidth] = useState(0)
   const handleResize = () => setScreenWidth(window.innerWidth)
   useEffect(() => {
     handleResize()
@@ -114,11 +114,9 @@ export default function Carousel() {
       >
         <motion.div
           drag={fullWidth > 768 ? 'x' : false}
-          dragConstraints={
-            fullWidth > 768 && { right: 500, left: -carouselWidth / 1.2 }
-          }
-          initial={fullWidth > 768 ? { x: '100%' } : { y: '100%' }}
-          animate={fullWidth > 768 ? { x: 0 } : { y: 0 }}
+          dragConstraints={{ right: 500, left: -carouselWidth / 1.2 }}
+          initial={{ x: '100%' }}
+          animate={{ x: 0 }}
           transition={{ duration: 0.8 }}
           className="flex gap-24 max-md:flex-col max-md:items-center max-md:gap-10 max-[325px]:gap-4"
         >
