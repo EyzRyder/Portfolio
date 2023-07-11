@@ -1,8 +1,10 @@
 'use client'
+import { ArrowUpLeftFromCircle, GithubIcon } from 'lucide-react'
 
 import { useEffect, useRef, useState } from 'react'
 import { motion } from 'framer-motion'
-import WorkCard from './WorkCard'
+// import WorkCard from './WorkCard'
+import { WorkCard } from './WorkCard/index'
 import img from '@/assets/Banner.png'
 import WorkFollowCard from './WorkFollowCard'
 const data = [
@@ -121,15 +123,47 @@ export default function Carousel() {
           className="flex gap-24 max-md:flex-col max-md:items-center max-md:gap-10 max-[325px]:gap-4"
         >
           {data.map((work) => (
-            <WorkCard
-              id={work.id}
-              url={'#'}
-              giturl={'https://github.com/EyzRyder'}
-              coverImg={work.coverImg}
-              key={work.title}
-              handleMouseEnter={() => setCardProps(work)}
-              handleMouseLeave={() => setCardProps(null)}
-            />
+            <WorkCard.Root key={work.id}>
+              <WorkCard.Frame>
+                <WorkCard.Tilt
+                  handleMouseEnter={() => setCardProps(work)}
+                  handleMouseLeave={() => setCardProps(null)}
+                >
+                  <WorkCard.Btn
+                    url={'https://github.com/EyzRyder'}
+                    Icon={GithubIcon}
+                    className="right-8 top-10 max-md:right-4 max-md:top-5"
+                  />
+                  <WorkCard.Btn
+                    url={'#'}
+                    Icon={ArrowUpLeftFromCircle}
+                    className="bottom-10 max-md:bottom-5 max-md:right-4 md:left-8"
+                  />
+                  <WorkCard.Image coverImg={work.coverImg} />
+                </WorkCard.Tilt>
+                <WorkCard.Scale>
+                  <WorkCard.Btn
+                    url={'https://github.com/EyzRyder'}
+                    Icon={GithubIcon}
+                    className="right-8 top-10 max-md:right-4 max-md:top-5"
+                  />
+                  <WorkCard.Btn
+                    url={'#'}
+                    Icon={ArrowUpLeftFromCircle}
+                    className="bottom-10 max-md:bottom-5 max-md:right-4 md:left-8"
+                  />
+                  <WorkCard.Image coverImg={work.coverImg} />
+                  <WorkCard.Detail
+                    id={work.id}
+                    title={work.title}
+                    descriptions={work.description}
+                    role={work.role}
+                    teck={work.teck}
+                  />
+                </WorkCard.Scale>
+                <WorkCard.Wrapper />
+              </WorkCard.Frame>
+            </WorkCard.Root>
           ))}
         </motion.div>
       </motion.div>

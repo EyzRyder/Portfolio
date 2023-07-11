@@ -41,7 +41,7 @@ export default function WorkCard({
         rest.className,
       )}
     >
-      <div className="frame relative  max-md:h-[12.93rem] max-md:min-h-[12.93rem] max-md:w-[20rem] max-md:min-w-[20rem] max-[325px]:h-[9.1875rem] max-[325px]:w-[15.1875rem] md:h-[23rem] md:min-h-[23rem] md:w-[36rem] md:min-w-[36rem]">
+      <div className="frame relative max-md:h-[12.93rem] max-md:min-h-[12.93rem] max-md:w-[20rem] max-md:min-w-[20rem] max-[325px]:h-[9.1875rem] max-[325px]:w-[15.1875rem] md:h-[23rem] md:min-h-[23rem] md:w-[36rem] md:min-w-[36rem]">
         <Tilt
           options={defaultOptions}
           className="tilt grid  place-content-center group-hover/card:absolute group-hover/card:z-[2] max-md:h-[12.93rem] max-md:min-h-[12.93rem] max-md:w-[20rem] max-md:min-w-[20rem]  md:h-[23rem] md:min-h-[23rem] md:w-[36rem] md:min-w-[36rem]"
