@@ -1,6 +1,7 @@
 'use client'
 
-import { CSSProperties, HTMLAttributes, useEffect, useState } from 'react'
+import useMousePosition from '@/useHook/useMousePosition'
+import { CSSProperties, HTMLAttributes } from 'react'
 import { twMerge } from 'tailwind-merge'
 
 interface WorkProps extends HTMLAttributes<HTMLDivElement> {
@@ -9,21 +10,6 @@ interface WorkProps extends HTMLAttributes<HTMLDivElement> {
   role: string
   teck: string[]
   descriptions: string
-}
-
-const useMousePosition = () => {
-  const [mousePosition, setMousePosition] = useState({ x: null, y: null })
-  useEffect(() => {
-    const updateMousePosition = (ev: any) => {
-      setMousePosition({ x: ev.pageX, y: ev.pageY })
-    }
-    // window.addEventListener('pointermove', updateMousePosition)
-    window.addEventListener('mousemove', updateMousePosition)
-    return () => {
-      window.removeEventListener('mousemove', updateMousePosition)
-    }
-  }, [])
-  return mousePosition
 }
 
 export default function WorkFollowCard({

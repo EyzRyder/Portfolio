@@ -13,4 +13,5 @@ const useMousePosition = () => {
   }, [])
   return mousePosition
 }
+
 export default useMousePosition

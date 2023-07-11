@@ -1,12 +1,11 @@
 'use client'
-import { ArrowUpLeftFromCircle, GithubIcon } from 'lucide-react'
-
 import { useEffect, useRef, useState } from 'react'
+import { ArrowUpLeftFromCircle, GithubIcon } from 'lucide-react'
 import { motion } from 'framer-motion'
-// import WorkCard from './WorkCard'
-import { WorkCard } from './WorkCard/index'
 import img from '@/assets/Banner.png'
+import { WorkCard } from './WorkCard/index'
 import WorkFollowCard from './WorkFollowCard'
+import useWidth from '@/useHook/useScreenWidth'
 const data = [
   {
     id: '12',
@@ -79,18 +78,6 @@ interface cardType {
   description: string
   role: string
   teck: string[]
-}
-
-const useWidth = () => {
-  const [screenWidth, setScreenWidth] = useState(0)
-  const handleResize = () => setScreenWidth(window.innerWidth)
-  useEffect(() => {
-    handleResize()
-    window.addEventListener('resize', handleResize)
-    return () => window.removeEventListener('resize', handleResize)
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [])
-  return screenWidth
 }
 
 export default function Carousel() {
