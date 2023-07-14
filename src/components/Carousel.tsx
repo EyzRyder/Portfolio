@@ -18,11 +18,10 @@ export default function Carousel() {
   useEffect(() => {
     // console.log(fullWidth)
     if (!carousel.current) return
-    // console.log(carousel.current?.scrollWidth)
-    console.log(
-      '🚀 ~ file: Carousel.tsx:29 ~ useEffect ~ carousel.current?.scrollWidth:',
-      carousel.current?.scrollWidth,
-    )
+    // console.log(
+    //   '🚀 ~ file: Carousel.tsx:29 ~ useEffect ~ carousel.current?.scrollWidth:',
+    //   carousel.current?.scrollWidth,
+    // )
     setCarouselWidth(
       carousel.current?.scrollWidth - carousel.current?.offsetWidth,
     )

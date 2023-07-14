@@ -104,8 +104,8 @@ export default function ContactForm() {
   // }
 
   const onSubmit: SubmitHandler<FormProps> = async (data: FormProps) => {
-    console.log(data)
-    const res = await fetch('/api/contact', {
+    // console.log(data)
+    await fetch('/api/contact', {
       method: 'POST',
       body: JSON.stringify(data),
       headers: {
@@ -133,7 +133,7 @@ export default function ContactForm() {
       })
       return res.json()
     })
-    console.log(res)
+    // console.log(res)
     // console.log(watch())
   }
   return (

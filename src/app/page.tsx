@@ -91,7 +91,7 @@ export default function Home() {
           <Logoicons
             name="Node.js"
             img={nodeLogo}
-            className="md:left-[10%] md:top-[15%]  lg:left-[10%]"
+            className="md:left-[10%] md:top-[15%]  lg:left-[20%]"
           />
 
           <Logoicons
