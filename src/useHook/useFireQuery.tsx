@@ -1,17 +1,7 @@
 import { worksCollection } from '@/libs/firebase'
+import { WorkProps } from '@/libs/types'
 import { onSnapshot, query } from 'firebase/firestore'
 import { useEffect, useState } from 'react'
-
-interface WorkProps {
-  id: string
-  url?: string | null
-  title: string
-  descriptions: string
-  image: string
-  role: string
-  teck: string[]
-  githubRep?: string | null
-}
 
 const useFireQuery = () => {
   const [work, setWork] = useState<WorkProps[] | null>(null)
@@ -21,7 +11,7 @@ const useFireQuery = () => {
       const itemsArr: WorkProps[] = []
       querySnapshot.forEach((doc) => {
         itemsArr.push({
-          id: doc.id,
+          _id: doc.id,
           url: doc.data().url,
           title: doc.data().title,
           descriptions: doc.data().descriptions,

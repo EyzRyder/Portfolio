@@ -213,7 +213,8 @@ export default function ContactForm() {
           <Loader
             className=" px-8 py-4 "
             type="ball-clip-rotate-multiple"
-            active={true} />
+            active={true}
+          />
         ) : (
           <button
             disabled={isSubmitting}

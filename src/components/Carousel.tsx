@@ -6,21 +6,14 @@ import { WorkCard } from './WorkCard/index'
 import WorkFollowCard from './WorkFollowCard'
 import useWidth from '@/useHook/useScreenWidth'
 import useFireQuery from '@/useHook/useFireQuery'
-
-interface cardType {
-  id: string
-  title: string
-  descriptions: string
-  role: string
-  teck: string[]
-}
+import { cardProps } from '@/libs/types'
 
 export default function Carousel() {
   const carousel = useRef<HTMLDivElement>(null)
   const [carouselWidth, setCarouselWidth] = useState(0)
   const fullWidth = useWidth()
   const workData = useFireQuery()
-  const [cardProps, setCardProps] = useState<cardType | null>(null)
+  const [cardDetails, setCardDetails] = useState<cardProps | null>(null)
 
   useEffect(() => {
     // console.log(fullWidth)
@@ -51,11 +44,11 @@ export default function Carousel() {
         >
           {workData &&
             workData.map((work) => (
-              <WorkCard.Root key={work.id}>
+              <WorkCard.Root key={work._id}>
                 <WorkCard.Frame>
                   <WorkCard.Tilt
-                    handleMouseEnter={() => setCardProps(work)}
-                    handleMouseLeave={() => setCardProps(null)}
+                    handleMouseEnter={() => setCardDetails(work)}
+                    handleMouseLeave={() => setCardDetails(null)}
                   >
                     {work.githubRep && (
                       <WorkCard.Btn
@@ -90,7 +83,7 @@ export default function Carousel() {
                     )}
                     <WorkCard.Image coverImg={work.image} />
                     <WorkCard.Detail
-                      id={work.id}
+                      _id={work._id}
                       title={work.title}
                       descriptions={work.descriptions}
                       role={work.role}
@@ -103,14 +96,14 @@ export default function Carousel() {
             ))}
         </motion.div>
       </motion.div>
-      {fullWidth > 768 && cardProps && (
+      {fullWidth > 768 && cardDetails && (
         <WorkFollowCard
-          id={cardProps.id}
-          title={cardProps.title}
-          descriptions={cardProps.descriptions}
-          role={cardProps.role}
-          teck={cardProps.teck}
-          key={cardProps.title}
+          _id={cardDetails._id}
+          title={cardDetails.title}
+          descriptions={cardDetails.descriptions}
+          role={cardDetails.role}
+          teck={cardDetails.teck}
+          key={cardDetails.title}
         />
       )}
     </>

@@ -1,16 +1,11 @@
 'use client'
 
+import { cardProps } from '@/libs/types'
 import useMousePosition from '@/useHook/useMousePosition'
 import { CSSProperties, HTMLAttributes } from 'react'
 import { twMerge } from 'tailwind-merge'
 
-interface WorkProps extends HTMLAttributes<HTMLDivElement> {
-  id: string
-  title: string
-  role: string
-  teck: string[]
-  descriptions: string
-}
+type WorkProps = cardProps & HTMLAttributes<HTMLDivElement>
 
 export default function WorkFollowCard({
   title,

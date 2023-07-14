@@ -1,13 +1,8 @@
 import { HTMLAttributes } from 'react'
 import WorkCardBadge from './WorkCardBadge'
+import { cardProps } from '@/libs/types'
 
-interface WorkCardDetailProps extends HTMLAttributes<HTMLDivElement> {
-  id: string
-  title: string
-  role: string
-  teck: string[]
-  descriptions: string
-}
+type WorkCardDetailProps = cardProps & HTMLAttributes<HTMLDivElement>
 export default function WorkCardDetail({
   title,
   role,
