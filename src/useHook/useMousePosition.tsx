@@ -1,3 +1,5 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
+
 import { useEffect, useState } from 'react'
 const useMousePosition = () => {
   const [mousePosition, setMousePosition] = useState({ x: null, y: null })
