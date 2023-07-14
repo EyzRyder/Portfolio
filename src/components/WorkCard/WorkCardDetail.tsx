@@ -17,8 +17,8 @@ export default function WorkCardDetail({
           <span>{title}</span>
           <span>Role: {role}</span>
         </header>
-        <div className="flex h-[7.5rem] w-full overflow-hidden whitespace-normal rounded-md bg-gradient-to-b from-[rgba(235,172,51,0.12)] to-[rgba(221,194,142,0.6)] px-2 py-3 text-justify backdrop-blur-md">
-          <p>{descriptions}</p>
+        <div className="flex h-[7.5rem] w-full overflow-hidden overflow-y-scroll whitespace-normal rounded-md bg-gradient-to-b from-[rgba(235,172,51,0.12)] to-[rgba(221,194,142,0.6)] px-2 py-3 text-justify backdrop-blur-md">
+          <p className="px-1 py-2">{descriptions}</p>
         </div>
       </div>
     </div>
