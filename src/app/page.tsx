@@ -85,53 +85,53 @@ export default function Home() {
           <Logoicons
             name="React.js"
             img={reactLogo}
-            className="md:left-[30%] md:top-[10%] "
+            className="md:left-[20%] md:top-[10%] lg:left-[30%] "
           />
 
           <Logoicons
             name="Node.js"
             img={nodeLogo}
-            className="md:left-[20%] md:top-[15%]  "
+            className="md:left-[10%] md:top-[15%]  lg:left-[10%]"
           />
 
           <Logoicons
             name="CSharp"
             img={csharpLogo}
-            className="md:left-[10%] md:top-[12%] "
+            className="md:left-[1%] md:top-[12%] lg:left-[10%] "
           />
           <Logoicons
             name="Javascript"
             img={jsLogo}
-            className="md:right-[30%] md:top-[10%] xl:right-[27%]"
+            className="md:right-[23%] md:top-[10%] lg:right-[27%] "
           />
 
           <Logoicons
             name="Typescript"
             img={tsLogo}
-            className="md:right-[20%] md:top-[5%] xl:right-[19%] "
+            className="md:right-[13%] md:top-[5%] xl:right-[17%] "
           />
 
           <Logoicons
             name="Ionic"
             img={ionicLogo}
-            className="md:right-[10%] md:top-[6%]  "
+            className="md:right-[3%] md:top-[6%] lg:right-[8%] "
           />
 
           <Logoicons
             name="Css"
             img={cssLogo}
-            className="md:bottom-[10%] md:left-[20%]"
+            className="md:bottom-[4%] md:left-[14%] min-[950px]:bottom-[10%] lg:left-[20%]"
           />
 
           <Logoicons
             name="Html"
             img={htmlLogo}
-            className="md:bottom-[8%] md:left-[10%]"
+            className="md:bottom-[8%] md:left-[3%] lg:left-[10%]"
           />
           <Logoicons
             name="Sass"
             img={sassLogo}
-            className="md:bottom-[13%] md:right-[15%] xl:right-[20%] "
+            className="md:bottom-[3%] md:right-[15%] min-[950px]:bottom-[13%] xl:right-[20%] "
           />
 
           <Logoicons
