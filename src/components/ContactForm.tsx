@@ -1,8 +1,8 @@
 'use client'
 import { SubmitHandler, useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
-import Recaptcha from 'react-recaptcha'
-import { useEffect, useRef, useState } from 'react'
+// import Recaptcha from 'react-recaptcha'
+// import { useEffect, useRef, useState } from 'react'
 import z from 'zod'
 import { toast } from 'react-hot-toast'
 import Loader from 'react-loaders'
@@ -35,73 +35,73 @@ export default function ContactForm() {
     resolver: zodResolver(FormSchema),
   })
 
-  const [callback, setCallback] = useState(false)
-  const [seed, setSeed] = useState<any>()
-  const [state, setState] = useState(false)
+  // const [callback, setCallback] = useState(false)
+  // const [seed, setSeed] = useState<any>()
+  // const [state, setState] = useState(false)
 
-  function Result(condition: any) {
-    if (condition === 'captcha') {
-      return (
-        <div className="absolute right-[60px] col-span-2 flex translate-y-[85px] rounded-md bg-red-700 p-2 text-[0.8rem] text-white sm:translate-y-[70px] md:right-auto md:translate-y-0">
-          Complete a verificação para continuar
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 24 24"
-            strokeWidth="1.5"
-            stroke="currentColor"
-            className="h-6 w-6"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              d="M12 9v3.75m9-.75a9 9 0 11-18 0 9 9 0 0118 0zm-9 3.75h.008v.008H12v-.008z"
-            />
-          </svg>
-        </div>
-      )
-    } else {
-      return (
-        <div className="absolute right-[60px] col-span-2 flex translate-y-[85px] rounded-md bg-lime-700 p-2 text-white sm:translate-y-[70px] md:right-auto md:translate-y-0">
-          Mensagem enviada{' '}
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 24 24"
-            strokeWidth="1.5"
-            stroke="currentColor"
-            className="h-6 w-6"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              d="M4.5 12.75l6 6 9-13.5"
-            />
-          </svg>
-        </div>
-      )
-    }
-  }
+  // function Result(condition: any) {
+  //   if (condition === 'captcha') {
+  //     return (
+  //       <div className="absolute right-[60px] col-span-2 flex translate-y-[85px] rounded-md bg-red-700 p-2 text-[0.8rem] text-white sm:translate-y-[70px] md:right-auto md:translate-y-0">
+  //         Complete a verificação para continuar
+  //         <svg
+  //           xmlns="http://www.w3.org/2000/svg"
+  //           fill="none"
+  //           viewBox="0 0 24 24"
+  //           strokeWidth="1.5"
+  //           stroke="currentColor"
+  //           className="h-6 w-6"
+  //         >
+  //           <path
+  //             strokeLinecap="round"
+  //             strokeLinejoin="round"
+  //             d="M12 9v3.75m9-.75a9 9 0 11-18 0 9 9 0 0118 0zm-9 3.75h.008v.008H12v-.008z"
+  //           />
+  //         </svg>
+  //       </div>
+  //     )
+  //   } else {
+  //     return (
+  //       <div className="absolute right-[60px] col-span-2 flex translate-y-[85px] rounded-md bg-lime-700 p-2 text-white sm:translate-y-[70px] md:right-auto md:translate-y-0">
+  //         Mensagem enviada{' '}
+  //         <svg
+  //           xmlns="http://www.w3.org/2000/svg"
+  //           fill="none"
+  //           viewBox="0 0 24 24"
+  //           strokeWidth="1.5"
+  //           stroke="currentColor"
+  //           className="h-6 w-6"
+  //         >
+  //           <path
+  //             strokeLinecap="round"
+  //             strokeLinejoin="round"
+  //             d="M4.5 12.75l6 6 9-13.5"
+  //           />
+  //         </svg>
+  //       </div>
+  //     )
+  //   }
+  // }
 
-  function onloadCallback() {
-    console.log('Recaptcha loaded')
-    setCallback(true)
-  }
+  // function onloadCallback() {
+  //   console.log('Recaptcha loaded')
+  //   setCallback(true)
+  // }
 
-  const recaptchaInstance = useRef()
-  useEffect(() => {
-    if (callback) {
-      // recaptchaInstance.reset()
-      setSeed(Math.random())
-      // Forma que utilizei para alternar o tema do Recaptcha, pois o .reset() não estava funcionando
-    }
-  }, [callback])
+  // const recaptchaInstance = useRef()
+  // useEffect(() => {
+  //   if (callback) {
+  //     // recaptchaInstance.reset()
+  //     setSeed(Math.random())
+  //     // Forma que utilizei para alternar o tema do Recaptcha, pois o .reset() não estava funcionando
+  //   }
+  // }, [callback])
 
-  const verifyCallback = function (response: any) {
-    if (response) {
-      setState(true)
-    }
-  }
+  // const verifyCallback = function (response: any) {
+  //   if (response) {
+  //     setState(true)
+  //   }
+  // }
 
   const onSubmit: SubmitHandler<FormProps> = async (data: FormProps) => {
     console.log(data)
@@ -198,7 +198,7 @@ export default function ContactForm() {
       </div>
 
       <div className="flex w-full justify-between xl:col-span-2">
-        <Recaptcha
+        {/* <Recaptcha
           sitekey="6LdP-p8kAAAAAMBJp2hawp3jfjE5nfeVZQ8f7YB8"
           render="explicit"
           verifyCallback={verifyCallback}
@@ -208,10 +208,11 @@ export default function ContactForm() {
           hl="pt-PT"
           size="compact"
           key={seed}
-        />
+        /> */}
+        <div></div>
         {isSubmitting ? (
           <Loader
-            className=" px-8 py-4 "
+            innerClassName=" px-8 py-4 "
             type="ball-clip-rotate-multiple"
             active={true}
           />

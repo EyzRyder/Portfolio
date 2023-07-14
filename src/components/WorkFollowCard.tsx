@@ -48,7 +48,7 @@ export default function WorkFollowCard({
             </span>
           ))}
         </div>
-        <p>{descriptions}</p>
+        <p className="text-zinc-100">{descriptions}</p>
       </div>
     </div>
   )
