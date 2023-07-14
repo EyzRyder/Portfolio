@@ -1,3 +1,4 @@
+@import 'loaders.css/src/animations/ball-clip-rotate-multiple.scss';
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -39,132 +40,13 @@ body {
   }
 }
 
-// .card {
-//   display: block;
-//   min-width: 36rem;
-//   min-height: 23rem;
+$primary-color: white;
 
-//   &:hover {
+.loader-hidden {
+  display: none;
+}
 
-//     .frame {
-//       cursor: pointer;
+.loader-active {
+  display: block;
+}
 
-//       .Wrapper {
-//         filter: blur(7px);
-
-
-//         &::before {
-//           filter: blur(20px);
-//         }
-//       }
-
-//       .tilt {
-//         z-index: 2;
-//         position: absolute;
-
-//         // transform: skew(0.02turn, 5deg);
-//         .cover {
-//           // transform: skew(0.02turn, 5deg);
-//           border-radius: 1rem;
-
-//         }
-
-//         .git,
-//         .arrow {
-//           // transform: skew(0.02turn, 5deg);
-//           display: block;
-//           z-index: 5;
-//         }
-//       }
-//     }
-//   }
-
-//   .frame {
-//     position: relative;
-//     width: 100%;
-//     height: 100%;
-//     // z-index: 2;
-
-//     .Wrapper {
-//       position: absolute;
-//       top: 50%;
-//       left: 50%;
-//       transform: translate(-50%, -50%);
-//       width: 36rem;
-//       height: 23rem;
-//       border: 2.5rem solid #921d3a;
-//       border-radius: 1rem;
-//       transition: all 300ms ease-in-out;
-//       // z-index: 1;
-
-//       &::before {
-//         content: '';
-//         transition: all 300ms ease-in-out;
-//         top: 50%;
-//         left: 50%;
-//         transform: translate(-50%, -50%);
-//         position: absolute;
-//         width: 36rem;
-//         height: 23rem;
-//         border: 2.3rem dotted #e8a21f;
-//         filter: blur(7px);
-//       }
-
-//       &::after {
-//         content: '';
-//         top: 50%;
-//         left: 50%;
-//         transform: translate(-50%, -50%);
-//         position: absolute;
-//         border: 2.3rem dotted #f0cf20;
-//         border-radius: 1rem;
-//         width: 36rem;
-//         height: 23rem;
-//       }
-//     }
-
-//     .tilt {
-
-//       display: grid;
-//       place-content: center;
-//       height: 100%;
-//       width: 100%;
-//       // z-index:1;
-
-//       .cover {
-//         border-radius: 1rem;
-//         transition: all 300ms ease-in-out;
-//         width: 100%;
-//         height: 100%;
-//         object-fit: cover;
-//         object-position: center;
-//         pointer-events: none;
-//       }
-
-//       .arrow {
-//         display: none;
-//         border: 2px solid white;
-//         padding: 4px;
-//         border-radius: 100%;
-//         position: absolute;
-//         color: white;
-
-//         bottom: 40px;
-//         left: 30px;
-//       }
-
-//       .git {
-//         display: none;
-//         border: 2px solid white;
-//         padding: 4px;
-//         border-radius: 100%;
-//         position: absolute;
-//         color: white;
-
-//         top: 40px;
-//         right: 30px;
-//       }
-//     }
-//   }
-
-// }

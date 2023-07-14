@@ -2,7 +2,7 @@ import { ReactNode } from 'react'
 import { Poppins, Cherry_Bomb_One as Cherry } from 'next/font/google'
 import './globals.scss'
 import Navbar from '@/components/Navbar'
-
+import { Toaster } from 'react-hot-toast'
 const poppins = Poppins({
   subsets: ['latin'],
   weight: '500',
@@ -27,6 +27,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
       >
         <Navbar />
         {children}
+        <Toaster />
       </body>
     </html>
   )
