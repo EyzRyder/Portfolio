@@ -1,0 +1,52 @@
+@import 'loaders.css/src/animations/ball-clip-rotate-multiple.scss';
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  overflow-x: hidden;
+  position: relative;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px rgb(128, 128, 128);
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #b99a10;
+
+  // border-radius: 10px;
+  /* Handle on hover */
+  &:hover {
+    background: #9e7b11;
+  }
+}
+
+$primary-color: white;
+
+.loader-hidden {
+  display: none;
+}
+
+.loader-active {
+  display: block;
+}
+
