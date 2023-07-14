@@ -30,18 +30,18 @@ export default function WorkFollowCard({
       )}
       style={frameStyle}
     >
-      <div className="head flex justify-between rounded-md bg-gradient-to-r from-secondary via-tertiary to-primary px-4 py-2 text-white ">
-        <span className="text-md font-alt">{title}</span>
+      <div className="head flex flex-col justify-between rounded-md bg-gradient-to-r from-secondary via-tertiary to-primary px-4 py-2 text-white ">
+        <span className="font-alt text-xl">{title}</span>
         <span>
           <span className="text-xs font-bold">Role:</span>{' '}
           <span className="text-xs">{role}</span>
         </span>
       </div>
       <div className="content flex flex-col gap-2 rounded-md bg-gradient-to-b from-[rgba(235,172,51,0.12)] to-[rgba(221,194,142,0.6)] px-2 py-3 backdrop-blur-md">
-        <div className="badgeList flex flex-row gap-2">
+        <div className="badgeList flex animate-slide flex-row gap-2 whitespace-nowrap">
           {teck.map((t: string) => (
             <span
-              className="badge rounded-2xl bg-gradient-to-r from-secondary via-tertiary to-primary px-4 py-2 text-xs font-bold"
+              className="badge ml-10 rounded-2xl bg-gradient-to-r from-secondary via-tertiary to-primary px-4 py-2 text-xs font-bold"
               key={t}
             >
               {t}
