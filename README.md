@@ -2,7 +2,7 @@
 <h2 align="center"> EzyRyder </h2>
 
 <p align="center">
-Esse é meu portfolio ele passou por tantas fazes e mudanças, e isso mostra o meu crescimento na carreira de desenvolvimento
+Descubra as habilidades de um desenvolvedor freelancer apaixonado por transformar ideias em realidade. Aqui, você encontrará uma coleção diversificada de projetos que demonstram minha expertise em desenvolvimento web e aplicativos móveis. Estou disponível para novos trabalhos e ansioso por desafios criativos. Entre em contato para discutir suas necessidades e começar a criar hoje mesmo!
 </p>
 
 <p align="center">
@@ -25,7 +25,6 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
 - React
 - Next 13
 - TypeScript
-- Axios
 - Framer-Motion
 - Tailwindcss
 - Zod
@@ -34,8 +33,9 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
 ## 💻 Projeto
 Esse é meu portfolio ele passou por tantas fazes e mudanças, e isso mostra o meu crescimento na carreira de desenvolvimento
 
-- first ver
-- old ver
+- [version 1](https://eyzryder.github.io/)
+- [version 2](https://bessiportfolio-c83b52drw-gabrielbessi.vercel.app) 
+- [version latest](https://bessiportfolio.vercel.app) 
 
 ## :memo: Licença
 
