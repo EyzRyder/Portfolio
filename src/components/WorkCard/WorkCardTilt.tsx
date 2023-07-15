@@ -8,7 +8,7 @@ interface WorkCardTiltProps {
 }
 
 const defaultOptions = {
-  reverse: true,
+  reverse: false,
   max: 35,
   perspective: 1000,
   speed: 1000,
