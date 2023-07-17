@@ -75,10 +75,11 @@ export default function Home() {
             className="rounded-full shadow-lg shadow-primary-tint"
           />
           <p className="text-justify text-lg max-md:text-base">
-            No momento estou estudando na Etec Albert Einstein aprendendo
-            desenvolvimento de sistemas na escola. Sou um grande fã de
-            desenvolvimento de sites, dispositivos móveis e bancos de dados
-            trabalhando para ser um grande programador e artista {':]'}.
+          Sou um estudante do Etec no curso de Desenvolvimento de Sistemas no 3ºano e tenho experiência. 
+          Tenho experiência em Desenvolvimento Web, em Mobile e em Design com Figma. 
+          Estou disponível para novos trabalhos 
+          e ansioso por desafios criativos que eu possa utilizar minhas habilidades e 
+          conhecimentos para criar soluções inovadoras e eficientes. {':]'}.
           </p>
         </div>
         <div className="max-md:flex max-md:flex-wrap max-md:items-center max-md:justify-center max-md:px-3 max-md:py-2">
