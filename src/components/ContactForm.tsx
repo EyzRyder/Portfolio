@@ -29,6 +29,7 @@ export default function ContactForm() {
   const {
     register,
     handleSubmit,
+    reset,
     // watch,
     formState: { errors, isSubmitting },
   } = useForm<FormProps>({
@@ -133,6 +134,7 @@ export default function ContactForm() {
       })
       return res.json()
     })
+    reset()
     // console.log(res)
     // console.log(watch())
   }
