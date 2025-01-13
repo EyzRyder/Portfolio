@@ -1,7 +1,6 @@
-import Image from 'next/image'
-import logo from '@/assets/mainLogoNoShine.svg'
-import { FileCode, Mail, User2 } from 'lucide-react'
-// import Link from 'next/link'
+import Image from "next/image";
+import logo from "@/assets/mainLogoNoShine.svg";
+import { FileCode, Mail, User2 } from "lucide-react";
 
 export default function Navbar() {
   return (
@@ -31,5 +30,5 @@ export default function Navbar() {
         <Mail />
       </a>
     </aside>
-  )
+  );
 }

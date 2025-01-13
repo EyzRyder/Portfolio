@@ -1,27 +1,27 @@
-import Image from 'next/image'
-import { GithubIcon, LinkedinIcon, InstagramIcon } from 'lucide-react'
+import Image from "next/image";
+import { GithubIcon, LinkedinIcon, InstagramIcon } from "lucide-react";
 
 // SVGS
-import logo from '@/assets/mainLogo.svg'
-import wave1 from '@/assets/wave1.svg'
-import wave2 from '@/assets/wave2.svg'
-import wave3 from '@/assets/wave3.svg'
-import wave4 from '@/assets/wave4.svg'
-import reactLogo from '@/assets/logo-react.svg'
-import csharpLogo from '@/assets/language-csharp.svg'
-import nodeLogo from '@/assets/logo-nodejs.svg'
-import htmlLogo from '@/assets/logo-html-5.svg'
-import cssLogo from '@/assets/logo-css-3.svg'
-import jsLogo from '@/assets/logo-javascript.svg'
-import tsLogo from '@/assets/typescript-logo.svg'
-import ionicLogo from '@/assets/logo-ionic.svg'
-import sassLogo from '@/assets/logo-sass.svg'
-import tailwindLogo from '@/assets/tailwind.svg'
+import logo from "@/assets/mainLogo.svg";
+import wave1 from "@/assets/wave1.svg";
+import wave2 from "@/assets/wave2.svg";
+import wave3 from "@/assets/wave3.svg";
+import wave4 from "@/assets/wave4.svg";
+import reactLogo from "@/assets/logo-react.svg";
+import csharpLogo from "@/assets/language-csharp.svg";
+import nodeLogo from "@/assets/logo-nodejs.svg";
+import htmlLogo from "@/assets/logo-html-5.svg";
+import cssLogo from "@/assets/logo-css-3.svg";
+import jsLogo from "@/assets/logo-javascript.svg";
+import tsLogo from "@/assets/typescript-logo.svg";
+import ionicLogo from "@/assets/logo-ionic.svg";
+import sassLogo from "@/assets/logo-sass.svg";
+import tailwindLogo from "@/assets/tailwind.svg";
 
 // Componets
-import ContactForm from '@/components/ContactForm'
-import Carousel from '@/components/Carousel'
-import Logoicons from '@/components/Logoicons'
+import ContactForm from "@/components/ContactForm";
+import Carousel from "@/components/Carousel";
+import Logoicons from "@/components/Logoicons";
 
 export default function Home() {
   return (
@@ -37,7 +37,7 @@ export default function Home() {
           <h1 className="font-alt text-7xl max-lg:items-center max-md:text-center max-md:text-5xl max-[320px]:text-3xl">
             Ola, Sou <br />
             Gabriel Bessi <br />
-            Um{' '}
+            Um{" "}
             <span className="bg-gradient-to-r from-secondary via-tertiary to-primary bg-clip-text text-transparent ">
               Desenvolvedor
             </span>
@@ -75,12 +75,14 @@ export default function Home() {
             className="rounded-full shadow-lg shadow-primary-tint"
           />
           <p className="text-justify text-lg max-md:text-base">
-            Sou um estudante do Etec no curso de Desenvolvimento de Sistemas no
-            3ºano e tenho experiência. Tenho experiência em Desenvolvimento Web,
-            em Mobile e em Design com Figma. Estou·disponível para novos
-            trabalhos e ansioso por desafios criativos que eu possa utilizar
-            minhas habilidades e conhecimentos para criar soluções inovadoras e
-            eficiente {':]'}.
+            Sou Desenvolvedor Full Stack com formação técnica em Desenvolvimento
+            de Sistemas pela Etec e atualmente cursando Análise e
+            Desenvolvimento de Sistemas na Fatec São Paulo. Possuo ampla
+            experiência em soluções Web e Backend, utilizando tecnologias como
+            TypeScript (React, Angular, Node.js), C#, Java, Python, Go. Já
+            participei de projetos em equipe que envolveram a implementação de
+            APIs, integração de plataformas e desenvolvimento de interfaces
+            intuitivas, sempre com foco em inovação e eficiência. {":]"}.
           </p>
         </div>
         <div className="max-md:flex max-md:flex-wrap max-md:items-center max-md:justify-center max-md:px-3 max-md:py-2">
@@ -227,5 +229,5 @@ export default function Home() {
       </div>
       <Image className="absolute bottom-0 w-full" src={wave4} alt="wave" />
     </main>
-  )
+  );
 }

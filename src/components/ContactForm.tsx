@@ -1,30 +1,30 @@
-'use client'
-import { SubmitHandler, useForm } from 'react-hook-form'
-import { zodResolver } from '@hookform/resolvers/zod'
+"use client";
+import { SubmitHandler, useForm } from "react-hook-form";
+import { zodResolver } from "@hookform/resolvers/zod";
 // import Recaptcha from 'react-recaptcha'
 // import { useEffect, useRef, useState } from 'react'
-import z from 'zod'
-import { toast } from 'react-hot-toast'
-import Loader from 'react-loaders'
+import z from "zod";
+import { toast } from "react-hot-toast";
+import Loader from "react-loaders";
 
 const FormSchema = z.object({
-  name: z.string().min(1, 'Digite seu nome.').max(35, 'Nome muito longo.'),
+  name: z.string().min(1, "Digite seu nome.").max(35, "Nome muito longo."),
   email: z
     .string()
-    .min(1, 'Digite seu endereço de email.')
-    .email('Email inválido.')
-    .max(35, 'Email muito longo.'),
+    .min(1, "Digite seu endereço de email.")
+    .email("Email inválido.")
+    .max(35, "Email muito longo."),
   subject: z
     .string()
-    .min(1, 'Digite o assunto do email.')
-    .max(41, 'Assunto muito longo.'),
+    .min(1, "Digite o assunto do email.")
+    .max(41, "Assunto muito longo."),
   message: z
     .string()
-    .min(1, 'Digite a mensagem do email.')
-    .max(1000, 'Mensagem muito longo.'),
-})
+    .min(1, "Digite a mensagem do email.")
+    .max(1000, "Mensagem muito longo."),
+});
 
-type FormProps = z.infer<typeof FormSchema>
+type FormProps = z.infer<typeof FormSchema>;
 export default function ContactForm() {
   const {
     register,
@@ -34,7 +34,7 @@ export default function ContactForm() {
     formState: { errors, isSubmitting },
   } = useForm<FormProps>({
     resolver: zodResolver(FormSchema),
-  })
+  });
 
   // const [callback, setCallback] = useState(false)
   // const [seed, setSeed] = useState<any>()
@@ -106,38 +106,38 @@ export default function ContactForm() {
 
   const onSubmit: SubmitHandler<FormProps> = async (data: FormProps) => {
     // console.log(data)
-    await fetch('/api/contact', {
-      method: 'POST',
+    await fetch("/api/contact", {
+      method: "POST",
       body: JSON.stringify(data),
       headers: {
-        'content-type': 'application/json',
-        Accept: 'application/json',
+        "content-type": "application/json",
+        Accept: "application/json",
       },
     }).then((res) => {
       if (!res.ok) {
-        toast.error('Failed to send message')
-        throw new Error('Failed to send message')
+        toast.error("Failed to send message");
+        throw new Error("Failed to send message");
       }
-      toast('Email enviado', {
-        position: 'top-right',
+      toast("Email enviado", {
+        position: "top-right",
         duration: 6000,
         style: {
-          border: '2px solid #e8a21f',
-          padding: '16px',
-          color: '#e8a21f',
-          backgroundColor: '#6c162b',
+          border: "2px solid #e8a21f",
+          padding: "16px",
+          color: "#e8a21f",
+          backgroundColor: "#6c162b",
         },
         iconTheme: {
-          primary: '#713200',
-          secondary: '#FFFAEE',
+          primary: "#713200",
+          secondary: "#FFFAEE",
         },
-      })
-      return res.json()
-    })
-    reset()
+      });
+      return res.json();
+    });
+    reset();
     // console.log(res)
     // console.log(watch())
-  }
+  };
   return (
     <form
       onSubmit={handleSubmit(onSubmit)}
@@ -147,7 +147,7 @@ export default function ContactForm() {
         <input
           className="rounded-tl-lg border-l-2 border-t-2 border-transparent border-l-primary-tint border-t-primary-tint bg-secondary outline-transparent placeholder:text-stone-400 focus:ring-0 max-xl:rounded-tr-lg max-xl:border-r-2 max-xl:border-r-primary-tint max-md:w-full"
           type="text"
-          {...register('name')}
+          {...register("name")}
           placeholder="Seu Nome"
           disabled={isSubmitting}
         />
@@ -162,7 +162,7 @@ export default function ContactForm() {
           disabled={isSubmitting}
           className=" border-r-2 border-transparent border-r-primary-tint bg-secondary outline-transparent placeholder:text-stone-400 focus:ring-0 max-xl:border-l-2 max-xl:border-l-primary-tint max-md:w-full xl:rounded-tr-lg xl:border-t-2 xl:border-t-primary-tint"
           type="email"
-          {...register('email')}
+          {...register("email")}
           placeholder="Seu Email"
         />
         {errors.email && (
@@ -175,7 +175,7 @@ export default function ContactForm() {
         <input
           className="col-span-2 w-full border-l-2 border-r-2 border-transparent border-l-primary-tint border-r-primary-tint bg-secondary outline-transparent placeholder:text-stone-400 focus:ring-0"
           type="text"
-          {...register('subject')}
+          {...register("subject")}
           placeholder="O Assunto"
           disabled={isSubmitting}
         />
@@ -188,7 +188,7 @@ export default function ContactForm() {
       <div className="relative w-full xl:col-span-2">
         <textarea
           className="col-span-2 h-36 w-full resize-none rounded-bl-lg rounded-br-lg border-b-2 border-l-2 border-r-2 border-transparent border-b-primary-tint border-l-primary-tint border-r-primary-tint bg-secondary leading-relaxed outline-0 ring-0 placeholder:text-stone-400 focus:ring-0"
-          {...register('message')}
+          {...register("message")}
           disabled={isSubmitting}
           placeholder="Seu Mensagem"
         />
@@ -229,5 +229,5 @@ export default function ContactForm() {
         )}
       </div>
     </form>
-  )
+  );
 }

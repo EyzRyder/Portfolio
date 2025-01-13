@@ -1,42 +1,36 @@
-'use client'
-import { useEffect, useRef, useState } from 'react'
-import { ArrowUpLeftFromCircle, GithubIcon } from 'lucide-react'
-import { motion } from 'framer-motion'
-import { WorkCard } from './WorkCard/index'
-import WorkFollowCard from './WorkFollowCard'
-import useWidth from '@/useHook/useScreenWidth'
-import useFireQuery from '@/useHook/useFireQuery'
-import { cardProps } from '@/libs/types'
+"use client";
+import { useEffect, useRef, useState } from "react";
+import { ArrowUpLeftFromCircle, GithubIcon } from "lucide-react";
+import { motion } from "framer-motion";
+import { WorkCard } from "./WorkCard/index";
+import WorkFollowCard from "./WorkFollowCard";
+import useWidth from "@/useHook/useScreenWidth";
+import { cardProps } from "@/libs/types";
+import { workData } from "@/data/works";
 
 export default function Carousel() {
-  const carousel = useRef<HTMLDivElement>(null)
-  const [carouselWidth, setCarouselWidth] = useState(0)
-  const fullWidth = useWidth()
-  const workData = useFireQuery()
-  const [cardDetails, setCardDetails] = useState<cardProps | null>(null)
+  const carousel = useRef<HTMLDivElement>(null);
+  const [carouselWidth, setCarouselWidth] = useState(0);
+  const fullWidth = useWidth();
+  const [cardDetails, setCardDetails] = useState<cardProps | null>(null);
 
   useEffect(() => {
-    // console.log(fullWidth)
-    if (!carousel.current) return
-    // console.log(
-    //   '🚀 ~ file: Carousel.tsx:29 ~ useEffect ~ carousel.current?.scrollWidth:',
-    //   carousel.current?.scrollWidth,
-    // )
+    if (!carousel.current) return;
     setCarouselWidth(
-      carousel.current?.scrollWidth - carousel.current?.offsetWidth,
-    )
-  }, [fullWidth, workData])
+      carousel.current?.scrollWidth - carousel.current?.offsetWidth
+    );
+  }, [fullWidth, workData]);
   return (
     <>
       <motion.div
         ref={carousel}
-        whileTap={{ cursor: 'grabbing' }}
+        whileTap={{ cursor: "grabbing" }}
         className="w-full cursor-grab overflow-hidden whitespace-nowrap px-2 py-12 max-md:overflow-y-scroll  md:-skew-x-[0.02turn] md:-skew-y-6"
       >
         <motion.div
-          drag={fullWidth > 768 ? 'x' : false}
+          drag={fullWidth > 768 ? "x" : false}
           dragConstraints={{ right: 500, left: -carouselWidth }}
-          initial={{ x: '100%' }}
+          initial={{ x: "100%" }}
           animate={{ x: 0 }}
           transition={{ duration: 0.8 }}
           className="flex gap-24 max-md:flex-col max-md:items-center max-md:gap-10 max-[325px]:gap-4"
@@ -106,5 +100,5 @@ export default function Carousel() {
         />
       )}
     </>
-  )
+  );
 }
