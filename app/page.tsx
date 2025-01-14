@@ -5,7 +5,7 @@ import { Intro } from "@/components/Intro";
 
 export default function Home() {
   return (
-    <div className="max-w-[64rem] w-full">
+    <div className="max-w-[64rem] w-full ">
       <Intro />
       <About />
       <WorkCardList />

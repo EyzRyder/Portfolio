@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { ReactNode } from "react";
+import { HTMLAttributes, ReactNode } from "react";
 import logo from "@/assets/mainLogo.svg";
 import {
   AppWindow,
@@ -7,6 +7,7 @@ import {
   MessageSquareDot,
   SunMoon,
 } from "lucide-react";
+import { twMerge } from "tailwind-merge";
 
 function NavBar() {
   return (
@@ -15,13 +16,13 @@ function NavBar() {
             max-lg:left-1/2 max-lg:-translate-x-1/2 max-lg:bottom-0
             flex lg:flex-col max-lg:flex-row gap-6 lg:px-6 max-lg:py-6"
     >
-      <NavWrapper>
+      <GlassEffectWrapper>
         <NavBtn>
           <Image src={logo} alt="logo" />
         </NavBtn>
-      </NavWrapper>
+      </GlassEffectWrapper>
 
-      <NavWrapper>
+      <GlassEffectWrapper>
         <NavBtn>
           <AppWindow className="text-grau-0 hover:text-inherit" />
         </NavBtn>
@@ -31,13 +32,13 @@ function NavBar() {
         <NavBtn>
           <MessageSquareDot className="text-grau-0 hover:text-inherit" />
         </NavBtn>
-      </NavWrapper>
+      </GlassEffectWrapper>
 
-      <NavWrapper>
+      <GlassEffectWrapper>
         <NavBtn>
           <SunMoon className="text-grau-0 hover:text-inherit" />
         </NavBtn>
-      </NavWrapper>
+      </GlassEffectWrapper>
     </ul>
   );
 }
@@ -50,8 +51,26 @@ function NavBtn({ children }: { children: ReactNode }) {
   );
 }
 
-function NavWrapper({ children }: { children: ReactNode }) {
-  return <div className="borderGrad">{children}</div>;
+interface GlassEffectWrapperProps extends HTMLAttributes<HTMLDivElement> {
+  children: ReactNode;
 }
 
-export { NavBar };
+function GlassEffectWrapper({
+  children,
+  className,
+  ...rest
+}: GlassEffectWrapperProps) {
+  return (
+    <div
+      className={twMerge(
+        "flex lg:flex-col max-lg:flex-row p-4 gap-4 backdrop-blur-md justify-center items-center rounded-3xl border-2 border-grau-0",
+        className,
+      )}
+      {...rest}
+    >
+      {children}
+    </div>
+  );
+}
+
+export { NavBar, GlassEffectWrapper };
