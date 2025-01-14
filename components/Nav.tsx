@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { HTMLAttributes, ReactNode } from "react";
+import { ReactNode } from "react";
 import logo from "@/assets/mainLogo.svg";
 import {
   AppWindow,
@@ -7,7 +7,7 @@ import {
   MessageSquareDot,
   SunMoon,
 } from "lucide-react";
-import { twMerge } from "tailwind-merge";
+import { GlassEffectWrapper } from "./GlassEffectWrapper";
 
 function NavBar() {
   return (
@@ -17,19 +17,19 @@ function NavBar() {
             flex lg:flex-col max-lg:flex-row gap-6 lg:px-6 max-lg:py-6"
     >
       <GlassEffectWrapper>
-        <NavBtn>
+        <NavBtn link="#home">
           <Image src={logo} alt="logo" />
         </NavBtn>
       </GlassEffectWrapper>
 
       <GlassEffectWrapper>
-        <NavBtn>
+        <NavBtn link="#work">
           <AppWindow className="text-grau-0 hover:text-inherit" />
         </NavBtn>
-        <NavBtn>
+        <NavBtn link="#about">
           <ContactRound className="text-grau-0 hover:text-inherit" />
         </NavBtn>
-        <NavBtn>
+        <NavBtn link="#contact">
           <MessageSquareDot className="text-grau-0 hover:text-inherit" />
         </NavBtn>
       </GlassEffectWrapper>
@@ -43,34 +43,15 @@ function NavBar() {
   );
 }
 
-function NavBtn({ children }: { children: ReactNode }) {
+function NavBtn({ children, link }: { children: ReactNode; link?: string }) {
   return (
-    <div className="w-8 h-8 flex justify-center items-center cursor-pointer hover:text-grau-3">
-      {children}
-    </div>
-  );
-}
-
-interface GlassEffectWrapperProps extends HTMLAttributes<HTMLDivElement> {
-  children: ReactNode;
-}
-
-function GlassEffectWrapper({
-  children,
-  className,
-  ...rest
-}: GlassEffectWrapperProps) {
-  return (
-    <div
-      className={twMerge(
-        "flex lg:flex-col max-lg:flex-row p-4 gap-4 bg-[] backdrop-blur-xl justify-center items-center rounded-3xl border-2 border-grau-0",
-        className,
-      )}
-      {...rest}
+    <a
+      href={link}
+      className="w-8 h-8 flex justify-center items-center cursor-pointer hover:text-grau-3 transition-all"
     >
       {children}
-    </div>
+    </a>
   );
 }
 
-export { NavBar, GlassEffectWrapper };
+export { NavBar };

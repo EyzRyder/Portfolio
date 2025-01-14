@@ -1,10 +1,13 @@
-import { GlassEffectWrapper } from "./Nav";
+import { GlassEffectWrapper } from "./GlassEffectWrapper";
 import SVGComponent3 from "./svg/SVGComponent3";
 import { Avatar, AvatarFallback, AvatarImage } from "./ui/avatar";
 
 function About() {
   return (
-    <div className="relative flex min-h-screen flex-col items-center justify-center">
+    <div
+      id="about"
+      className="relative flex min-h-screen flex-col items-center justify-center"
+    >
       <div className="z-[1] flex lg:flex-row max-lg:flex-col justify-evenly w-full items-center max-lg:gap-6">
         <div className="flex flex-col justify-center items-center gap-6">
           <GlassEffectWrapper className="font-alt text-xl text-grau-0">

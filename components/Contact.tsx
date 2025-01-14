@@ -1,19 +1,21 @@
 import SVGComponent4 from "./svg/SVGComponent4";
 import ContactForm from "./ContactForm";
+import { ReactNode } from "react";
+import { GlassEffectWrapper } from "./GlassEffectWrapper";
 
 function Contact() {
   return (
-    <div className="relative flex min-h-screen flex-col items-center justify-center gap-6">
+    <div
+      id="contact"
+      className="relative flex min-h-screen flex-col items-center justify-center gap-6"
+    >
       <section className="z-10 flex flex-col items-center justify-center gap-3  max-md:px-4 max-md:py-3 ">
         <h2 className="font-alt text-4xl text-primary-tint">
           Me adicione nas redes
         </h2>
         <div className="flex flex-col gap-4 ">
           <div className="flex flex-wrap items-center justify-center gap-4 max-sm:px-2">
-            <a
-              className="flex w-52 items-center justify-center gap-3 rounded-lg border-2 border-grau-0 bg-secondary py-3 hover:bg-opacity-30 hover:text-primary max-sm:w-32 max-sm:px-2 max-sm:text-sm"
-              href="https://www.linkedin.com/in/gabriel-bessi-5b0160230/"
-            >
+            <LinkContato href="https://www.linkedin.com/in/gabriel-bessi-5b0160230/">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="40"
@@ -30,8 +32,8 @@ function Contact() {
                 <circle cx="4" cy="4" r="2" />
               </svg>
               <span>/gabriel-bessi</span>
-            </a>
-            <p className="flex w-52 items-center justify-center gap-3 rounded-lg border-2 border-grau-0 bg-secondary py-3 hover:cursor-pointer hover:bg-opacity-30 hover:text-primary max-sm:w-32 max-sm:px-2 max-sm:text-sm">
+            </LinkContato>
+            <LinkContato>
               <svg
                 role="img"
                 viewBox="0 0 24 24"
@@ -45,11 +47,8 @@ function Contact() {
                 ></path>
               </svg>
               <span>/eyzryder</span>
-            </p>
-            <a
-              className="flex w-52 items-center justify-center gap-3 rounded-lg border-2 border-grau-0 bg-secondary py-3 hover:bg-opacity-30 hover:text-primary max-sm:w-32 max-sm:px-2 max-sm:text-sm"
-              href="https://github.com/EyzRyder"
-            >
+            </LinkContato>
+            <LinkContato href="https://github.com/EyzRyder">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="40"
@@ -65,11 +64,8 @@ function Contact() {
                 <path d="M9 18c-4.51 2-5-2-7-2" />
               </svg>
               <span>/EyzRyder</span>
-            </a>
-            <a
-              className="flex w-52 items-center justify-center gap-3 rounded-lg border-2 border-grau-0 bg-secondary py-3 hover:bg-opacity-30 hover:text-primary max-sm:w-32 max-sm:px-2 max-sm:text-sm"
-              href="https://www.instagram.com/eyz_ryder/"
-            >
+            </LinkContato>
+            <LinkContato href="https://www.instagram.com/eyz_ryder/">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="40"
@@ -86,12 +82,15 @@ function Contact() {
                 <line x1="17.5" x2="17.51" y1="6.5" y2="6.5" />
               </svg>
               <span>/eyz_ryder</span>
-            </a>
+            </LinkContato>
           </div>
         </div>
       </section>
 
-      <div className="z-10 flex flex-col items-center justify-center gap-6 max-2xl:ml-8 max-xl:ml-12 max-md:m-0 max-md:w-full max-md:px-4 max-md:py-3 ">
+      <div
+        className="z-10 flex flex-col items-center justify-center gap-6
+                max-2xl:ml-8 max-xl:ml-12 max-md:m-0 max-md:w-full max-md:px-4 max-md:py-3 "
+      >
         <h1 className="text-center font-alt text-5xl text-primary-tint max-xl:text-4xl">
           Entre em contato comigo!
         </h1>
@@ -106,5 +105,19 @@ function Contact() {
     </div>
   );
 }
+
+const LinkContato = ({
+  children,
+  href,
+}: {
+  children: ReactNode;
+  href?: string;
+}) => (
+  <a className="flex items-center justify-center cursor-pointer" href={href}>
+    <GlassEffectWrapper className="lg:flex-row max-sm:px-2 hover:text-primary w-52 max-sm:text-sm hover:bg-opacity-100 transition-all hover:text-grau-3">
+      {children}
+    </GlassEffectWrapper>
+  </a>
+);
 
 export { Contact };

@@ -2,10 +2,12 @@ import Image from "next/image";
 import logo from "@/assets/mainLogo.svg";
 import SVGComponent1 from "./svg/SVGComponent1";
 import SVGComponent2 from "./svg/SVGComponent2";
+import { GlassEffectWrapper } from "./GlassEffectWrapper";
 
 function Intro() {
   return (
     <div
+      id="home"
       className=" w-full grid min-h-screen place-content-center
             lg:grid-cols-2 z-[1]"
     >
@@ -38,11 +40,10 @@ function Intro() {
         <p className="text-grau-0 max-md:text-center">
           Fullstack Dev / Artista / Estudante
         </p>
-        <a
-          href="#contact"
-          className="w-fit rounded-2xl border border-primary-tint bg-transparent px-8 py-4 font-alt text-primary-tint transition-all hover:border-primary hover:bg-secondary hover:text-primary"
-        >
-          Contate-me
+        <a href="#contact">
+          <GlassEffectWrapper className="font-alt text-grau-0 transition-all hover:border-grau-3 hover:bg- hover:text-grau-3">
+            Contate-me
+          </GlassEffectWrapper>
         </a>
       </div>
       <SVGComponent1 className="absolute -top-2 left-0 max-w-full" />
