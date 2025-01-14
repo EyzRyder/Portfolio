@@ -12,7 +12,7 @@ import { twMerge } from "tailwind-merge";
 function NavBar() {
   return (
     <ul
-      className="fixed lg:left-0 lg:top-1/2 lg:-translate-y-1/2 z-10
+      className="fixed lg:left-0 lg:top-1/2 lg:-translate-y-1/2 z-20
             max-lg:left-1/2 max-lg:-translate-x-1/2 max-lg:bottom-0
             flex lg:flex-col max-lg:flex-row gap-6 lg:px-6 max-lg:py-6"
     >
