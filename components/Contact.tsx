@@ -1,5 +1,5 @@
 import SVGComponent4 from "./svg/SVGComponent4";
-import ContactForm from "./ContactForm";
+import { ContactForm } from "./ContactForm";
 import { ReactNode } from "react";
 import { GlassEffectWrapper } from "./GlassEffectWrapper";
 
@@ -114,7 +114,11 @@ const LinkContato = ({
   href?: string;
 }) => (
   <a className="flex items-center justify-center cursor-pointer" href={href}>
-    <GlassEffectWrapper className="lg:flex-row max-sm:px-2 hover:text-primary w-52 max-sm:text-sm hover:bg-opacity-100 transition-all hover:text-grau-3">
+    <GlassEffectWrapper
+      className="lg:flex-row max-sm:px-2 hover:text-primary
+                w-52 max-sm:text-sm hover:bg-opacity-100 hover:border-grau-3
+                transition-all hover:text-grau-3"
+    >
       {children}
     </GlassEffectWrapper>
   </a>
