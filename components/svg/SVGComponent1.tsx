@@ -1,8 +1,6 @@
 import { SVGProps } from "react";
 
-interface SVGComponent1Props extends SVGProps<SVGSVGElement> {}
-
-function SVGComponent1(props: SVGComponent1Props) {
+function SVGComponent1(props: SVGProps<SVGSVGElement>) {
   return (
     <svg
       width={423}

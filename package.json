@@ -11,10 +11,12 @@
   "dependencies": {
     "@radix-ui/react-avatar": "^1.1.2",
     "@tailwindcss/forms": "^0.5.10",
+    "@types/nodemailer": "^6.4.17",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "lucide-react": "^0.471.1",
     "next": "15.1.4",
+    "nodemailer": "^6.9.16",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "tailwind-merge": "^2.6.0",
