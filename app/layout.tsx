@@ -27,7 +27,8 @@ export default function RootLayout({
   return (
     <html lang="pt-br">
       <body
-        className={`${poppins.variable} ${cherry.variable} relative antialiased h-screen  w-full flex justify-center bg-zinc-100 `}
+        className={`${poppins.variable} ${cherry.variable} relative antialiased
+                    h-screen w-full flex justify-center bg-zinc-100  overflow-x-hidden`}
       >
         <NavBar />
         {children}

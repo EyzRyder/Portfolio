@@ -7,9 +7,10 @@ function Contact() {
   return (
     <div
       id="contact"
-      className="relative flex min-h-screen flex-col items-center justify-center gap-6"
+      className="relative flex min-h-screen flex-col items-center justify-center
+            gap-6 w-full "
     >
-      <section className="z-10 flex flex-col items-center justify-center gap-3  max-md:px-4 max-md:py-3 ">
+      <section className="z-[1] flex flex-col items-center justify-center gap-3  max-md:px-4 max-md:py-3 ">
         <h2 className="font-alt text-4xl text-primary-tint">
           Me adicione nas redes
         </h2>
@@ -88,8 +89,9 @@ function Contact() {
       </section>
 
       <div
-        className="z-10 flex flex-col items-center justify-center gap-6
-                max-2xl:ml-8 max-xl:ml-12 max-md:m-0 max-md:w-full max-md:px-4 max-md:py-3 "
+        className="z-[1] flex flex-col items-center justify-center gap-6
+                max-2xl:ml-8 max-xl:ml-12 max-md:m-0 max-md:w-full max-md:px-4
+                max-md:py-3 "
       >
         <h1 className="text-center font-alt text-5xl text-primary-tint max-xl:text-4xl">
           Entre em contato comigo!
@@ -101,7 +103,7 @@ function Contact() {
         </p>
         <ContactForm />
       </div>
-      <SVGComponent4 className="absolute bottom-0" />
+      <SVGComponent4 className="absolute bottom-0 h-fit " />
     </div>
   );
 }
@@ -116,8 +118,9 @@ const LinkContato = ({
   <a className="flex items-center justify-center cursor-pointer" href={href}>
     <GlassEffectWrapper
       className="lg:flex-row max-sm:px-2 hover:text-primary
+                transition ease-in-out delay-75 duration-500
                 w-52 max-sm:text-sm hover:bg-opacity-100 hover:border-grau-3
-                transition-all hover:text-grau-3"
+                hover:text-grau-3"
     >
       {children}
     </GlassEffectWrapper>

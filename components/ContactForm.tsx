@@ -82,7 +82,7 @@ function ContactForm() {
     <Form {...form}>
       <form
         onSubmit={form.handleSubmit(onSubmit)}
-        className=" grid gap-4 max-md:w-full sm:grid-cols-2 mb-32"
+        className=" grid gap-4 max-md:w-full sm:grid-cols-2 pb-32 "
       >
         <FormField
           control={form.control}

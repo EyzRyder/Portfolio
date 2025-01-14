@@ -10,9 +10,7 @@ function About() {
     >
       <div className="z-[1] flex lg:flex-row max-lg:flex-col justify-evenly w-full items-center max-lg:gap-6">
         <div className="flex flex-col justify-center items-center gap-6">
-          <GlassEffectWrapper className="font-alt text-xl text-grau-0">
-            Sobre Mim
-          </GlassEffectWrapper>
+          <h2 className="font-alt text-4xl text-grau-0">Sobre Mim</h2>
           <GlassEffectWrapper
             className="flex lg:flex-col justify-center items-center
                             max-lg:flex-col max-w-[400px]"

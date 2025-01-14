@@ -1,4 +1,6 @@
-export const workData = [
+import { WorkProps } from "@/lib/types";
+
+export const workData: WorkProps[] = [
   {
     _id: "Aqz7bgMLmxbn7zG5yldO",
     url: "https://cepapi-gb.vercel.app/",

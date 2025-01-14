@@ -47,7 +47,7 @@ function NavBtn({ children, link }: { children: ReactNode; link?: string }) {
   return (
     <a
       href={link}
-      className="w-8 h-8 flex justify-center items-center cursor-pointer hover:text-grau-3 transition-all"
+      className="w-8 h-8 flex justify-center items-center cursor-pointer hover:text-grau-3 transition ease-in-out delay-75 duration-300 hover:transition-all"
     >
       {children}
     </a>

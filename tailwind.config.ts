@@ -1,7 +1,6 @@
 import type { Config } from "tailwindcss";
 
 export default {
-  darkMode: ["class"],
   content: [
     "./pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
@@ -50,9 +49,6 @@ export default {
           "4": "hsl(var(--chart-4))",
           "5": "hsl(var(--chart-5))",
         },
-        "bg-main": "#430220",
-        "primary-tint": "#E8A21F",
-        tertiary: "#B8522E",
         grau: {
           0: "#430220",
           1: "#6C162B",
@@ -60,11 +56,6 @@ export default {
           3: "#E8A21F",
           4: "#F0CF20",
           5: "#FFD700",
-          "bg-main": "#430220",
-          primary: "#FFD700",
-          "primary-tint": "#E8A21F",
-          secondary: "#6C162B",
-          tertiary: "#B8522E",
         },
       },
       borderRadius: {
