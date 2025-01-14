@@ -1,8 +1,8 @@
-import { HTMLAttributes } from 'react'
-import WorkCardBadge from './WorkCardBadge'
-import { cardProps } from '@/libs/types'
+import { HTMLAttributes } from "react";
+import WorkCardBadge from "./WorkCardBadge";
+import { cardProps } from "@/lib/types";
 
-type WorkCardDetailProps = cardProps & HTMLAttributes<HTMLDivElement>
+type WorkCardDetailProps = cardProps & HTMLAttributes<HTMLDivElement>;
 export default function WorkCardDetail({
   title,
   role,
@@ -16,7 +16,7 @@ export default function WorkCardDetail({
         <header className="flex flex-col justify-between rounded-md bg-gradient-to-r from-secondary via-tertiary to-primary px-4 py-2 text-white ">
           <span className="font-alt text-xl">{title}</span>
           <span>
-            <span className="text-xs font-bold">Role:</span>{' '}
+            <span className="text-xs font-bold">Role:</span>{" "}
             <span className="text-xs">{role}</span>
           </span>
         </header>
@@ -25,5 +25,5 @@ export default function WorkCardDetail({
         </div>
       </div>
     </div>
-  )
+  );
 }

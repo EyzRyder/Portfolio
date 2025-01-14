@@ -1,6 +1,6 @@
 "use client";
 
-import { cardProps } from "@/libs/types";
+import { cardProps } from "@/lib/types";
 import useMousePosition from "@/useHook/useMousePosition";
 import { CSSProperties, HTMLAttributes } from "react";
 import { twMerge } from "tailwind-merge";
@@ -26,11 +26,11 @@ export default function WorkFollowCard({
     <div
       className={twMerge(
         "details z-2 absolute aspect-[1] h-fit w-80 overflow-hidden rounded-md transition delay-150 duration-500 ease-[cubic-bezier(0.075,0.82,0.165,1)]",
-        rest.className
+        rest.className,
       )}
       style={frameStyle}
     >
-      <div className="head flex flex-col justify-between rounded-md bg-gradient-to-r from-secondary via-tertiary to-primary px-4 py-2 text-white ">
+      <div className="head flex flex-col justify-between rounded-md bg-gradient-to-r from-grau-1 via-grau-2 to-grau-5 px-4 py-2 text-white ">
         <span className="font-alt text-xl">{title}</span>
         <span>
           <span className="text-xs font-bold">Role:</span>{" "}
@@ -41,14 +41,14 @@ export default function WorkFollowCard({
         <div className="badgeList flex animate-slide flex-row gap-2 whitespace-nowrap">
           {teck.map((t: string) => (
             <span
-              className="badge ml-10 rounded-2xl bg-gradient-to-r from-secondary via-tertiary to-primary px-4 py-2 text-xs font-bold"
+              className="badge ml-10 rounded-2xl bg-gradient-to-r from-grau-1 via-grau-2 to-grau-5 px-4 py-2 text-white text-xs font-bold"
               key={t}
             >
               {t}
             </span>
           ))}
         </div>
-        <p className="text-zinc-100">{descriptions}</p>
+        <p className="text-grau-0">{descriptions}</p>
       </div>
     </div>
   );
