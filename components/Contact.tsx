@@ -11,9 +11,7 @@ function Contact() {
             gap-6 w-full "
     >
       <section className="z-[1] flex flex-col items-center justify-center gap-3  max-md:px-4 max-md:py-3 ">
-        <h2 className="font-alt text-4xl text-primary-tint">
-          Me adicione nas redes
-        </h2>
+        <h2 className="font-alt text-4xl text-grau-3">Me adicione nas redes</h2>
         <div className="flex flex-col gap-4 ">
           <div className="flex flex-wrap items-center justify-center gap-4 max-sm:px-2">
             <LinkContato href="https://www.linkedin.com/in/gabriel-bessi-5b0160230/">
@@ -93,7 +91,7 @@ function Contact() {
                 max-2xl:ml-8 max-xl:ml-12 max-md:m-0 max-md:w-full max-md:px-4
                 max-md:py-3 "
       >
-        <h1 className="text-center font-alt text-5xl text-primary-tint max-xl:text-4xl">
+        <h1 className="text-center font-alt text-5xl text-grau-3 max-xl:text-4xl">
           Entre em contato comigo!
         </h1>
         <p className="max-w-[500px] text-justify ">
