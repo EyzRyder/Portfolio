@@ -12,7 +12,8 @@ function GlassEffectWrapper({
   return (
     <div
       className={twMerge(
-        "flex lg:flex-col max-lg:flex-row p-4 gap-4 bg-[#FEF3C7] bg-opacity-30 backdrop-blur-md justify-center items-center rounded-3xl border-2 border-grau-0",
+        "flex lg:flex-col max-lg:flex-row p-4 gap-4 bg-[#FEF3C7] bg-opacity-30 backdrop-blur-md justify-center items-center rounded-3xl border-2 border-grau-0 dark:border-grau-4",
+        "dark:border-zinc-200",
         className,
       )}
       {...rest}

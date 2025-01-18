@@ -113,7 +113,11 @@ const LinkContato = ({
   children: ReactNode;
   href?: string;
 }) => (
-  <a className="flex items-center justify-center cursor-pointer" href={href}>
+  <a
+    className="flex items-center justify-center cursor-pointer"
+    href={href}
+    target="_blank"
+  >
     <GlassEffectWrapper
       className="lg:flex-row max-sm:px-2 hover:text-primary
                 transition ease-in-out delay-75 duration-500

@@ -76,7 +76,7 @@ export default function WorkFollowCard({
             ))}
           </CarouselContent>
         </Carousel>
-        <p className="text-grau-0">{descriptions}</p>
+        <p className="text-grau-0 dark:text-zinc-200">{descriptions}</p>
       </div>
     </div>
   );

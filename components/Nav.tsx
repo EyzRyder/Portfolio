@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { ReactNode } from "react";
+import { AnchorHTMLAttributes, ReactNode } from "react";
 import logo from "@/assets/mainLogo.svg";
 import {
   AppWindow,
@@ -8,6 +8,7 @@ import {
   SunMoon,
 } from "lucide-react";
 import { GlassEffectWrapper } from "./GlassEffectWrapper";
+import { DarkModeToggle } from "./DarkModeToggle";
 
 function NavBar() {
   return (
@@ -23,35 +24,39 @@ function NavBar() {
       </GlassEffectWrapper>
 
       <GlassEffectWrapper>
-        <NavBtn link="#work">
-          <AppWindow className="text-grau-0 hover:text-inherit" />
-        </NavBtn>
         <NavBtn link="#about">
-          <ContactRound className="text-grau-0 hover:text-inherit" />
+          <ContactRound className="text-grau-0 dark:text-zinc-100 hover:text-grau-3 dark:hover:text-grau-5" />
+        </NavBtn>
+        <NavBtn link="#work">
+          <AppWindow className="text-grau-0 dark:text-zinc-100 hover:text-grau-3 dark:hover:text-grau-5" />
         </NavBtn>
         <NavBtn link="#contact">
-          <MessageSquareDot className="text-grau-0 hover:text-inherit" />
+          <MessageSquareDot className="text-grau-0 dark:text-zinc-100 hover:text-grau-3 dark:hover:text-grau-5" />
         </NavBtn>
       </GlassEffectWrapper>
 
-      <GlassEffectWrapper>
-        <NavBtn>
-          <SunMoon className="text-grau-0 hover:text-inherit" />
-        </NavBtn>
-      </GlassEffectWrapper>
+      <DarkModeToggle />
     </ul>
   );
 }
 
-function NavBtn({ children, link }: { children: ReactNode; link?: string }) {
+interface NavBtnProps extends AnchorHTMLAttributes<HTMLAnchorElement> {
+  children: ReactNode;
+  link?: string;
+}
+
+function NavBtn({ children, link, ...rest }: NavBtnProps) {
   return (
     <a
       href={link}
-      className="w-8 h-8 flex justify-center items-center cursor-pointer hover:text-grau-3 transition ease-in-out delay-75 duration-300 hover:transition-all"
+      className="w-8 h-8 flex justify-center items-center cursor-pointer
+                 hover:text-grau-3 transition ease-in-out delay-75 duration-300
+                 hover:transition-all "
+      {...rest}
     >
       {children}
     </a>
   );
 }
 
-export { NavBar };
+export { NavBar, NavBtn };

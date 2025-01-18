@@ -8,7 +8,7 @@ function Intro() {
   return (
     <div
       id="home"
-      className=" w-full grid min-h-screen place-content-center
+      className="w-full grid min-h-screen place-content-center
             lg:grid-cols-2 z-[1]"
     >
       <div
@@ -25,7 +25,7 @@ function Intro() {
         <h1
           className="font-alt text-7xl text-grau-0
                     max-lg:items-center max-md:text-center max-md:text-5xl
-                    max-[320px]:text-3xl"
+                    max-[320px]:text-3xl dark:text-zinc-100"
         >
           Ola, Sou <br />
           Gabriel Bessi <br />
@@ -37,11 +37,15 @@ function Intro() {
             Desenvolvedor
           </span>
         </h1>
-        <p className="text-grau-0 max-md:text-center">
+        <p className="text-grau-0 max-md:text-center dark:text-zinc-200">
           Fullstack Dev / Artista / Estudante
         </p>
         <a href="#contact">
-          <GlassEffectWrapper className="font-alt text-grau-0 transition-all hover:border-grau-3 hover:bg- hover:text-grau-3">
+          <GlassEffectWrapper
+            className="font-alt text-grau-0 transition-all dark:hover:text-grau-4
+                        hover:border-grau-3 hover:text-grau-3 dark:text-zinc-200
+                        dark:border-zinc-200 dark:hover:border-grau-3"
+          >
             Contate-me
           </GlassEffectWrapper>
         </a>

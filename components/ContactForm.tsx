@@ -93,9 +93,10 @@ function ContactForm() {
                 <Input
                   className="rounded-tl-lg border-l-2 border-t-2 border-transparent
                              border-l-grau-0 border-t-grau-0
+                             dark:border-l-zinc-200 dark:border-t-zinc-200
                              outline-transparent placeholder:text-stone-400
                              focus:ring-0 max-sm:rounded-tr-lg
-                             max-sm:border-r-2 max-sm:border-r-grau-0
+                             max-sm:border-r-2 max-sm:border-r-grau-0 dark:max-sm:border-r-zinc-200
                              max-md:w-full bg-[#FEF3C7] bg-opacity-30 backdrop-blur-md "
                   placeholder="Seu nome"
                   disabled={form.formState.isSubmitting}
@@ -115,6 +116,8 @@ function ContactForm() {
               <FormControl>
                 <Input
                   className="border-r-2 border-transparent border-r-grau-0
+                            dark:border-r-zinc-200 dark:sm:border-t-zinc-200
+                            dark:max-sm:border-l-zinc-200
                             outline-transparent placeholder:text-stone-400 focus:ring-0
                             max-sm:border-l-2 max-sm:border-l-grau-0 max-md:w-full
                             sm:rounded-tr-lg sm:border-t-2 sm:border-t-grau-0
@@ -138,6 +141,7 @@ function ContactForm() {
                 <Input
                   className="sm:col-span-2 w-full border-l-2 border-r-2 border-transparent
                             border-l-grau-0 border-r-grau-0
+                            dark:border-l-zinc-200 dark:border-r-zinc-200
                             outline-transparent placeholder:text-stone-400 focus:ring-0
                             bg-[#FEF3C7] bg-opacity-30 backdrop-blur-md"
                   placeholder="Assunto da mensagem"
@@ -159,8 +163,9 @@ function ContactForm() {
                 <Textarea
                   className="col-span-2 h-36 w-full resize-none rounded-bl-lg
                             rounded-br-lg border-b-2 border-l-2 border-r-2
+                            dark:border-l-zinc-200 dark:border-r-zinc-200
                             border-transparent border-b-grau-0
-                            border-l-grau-0 border-r-grau-0
+                            border-l-grau-0 border-r-grau-0 dark:border-b-zinc-200
                             leading-relaxed outline-0 ring-0 placeholder:text-stone-400
                             focus:ring-0  bg-[#FEF3C7] bg-opacity-30  backdrop-blur-md"
                   placeholder="Digite sua mensagem"
@@ -177,7 +182,9 @@ function ContactForm() {
           type="submit"
           className="w-fit rounded-2xl border border-grau-0 bg-transparent
                     px-8 py-4 font-alt text-grau-0 transition-all bg-opacity-30
-                    hover:border-grau-4 hover:text-grau-3 hover:bg-[#FEF3C7] bg-[#FEF3C7]"
+                    hover:border-grau-4 hover:text-grau-3 hover:bg-[#FEF3C7]
+                    bg-[#FEF3C7] dark:text-zinc-200 dark:border-zinc-200
+                    dark:hover:border-grau-3 dark:hover:text-grau-5"
         >
           {form.formState.isSubmitting ? (
             <Loader
