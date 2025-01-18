@@ -38,7 +38,7 @@ function WorkCard({
             bg-[linear-gradient(120deg,#6C162B,#B8522E,#E8A21F,#F0CF20)] relative"
       >
         <div
-          className="relative w-[98%] h-[98%] bg-grau-0 rounded-3xl
+          className="relative w-[98%] h-[98%] bg-grau-0 bg-[url('/assets/Meteor.svg')] rounded-3xl
                     flex flex-col justify-center items-center"
         >
           <PCFrame>
@@ -116,7 +116,7 @@ const PCFrame = ({ children }: { children: ReactNode }) => (
 const GithubIcon = ({ link }: { link: string }) => (
   <a
     href={link}
-    className="absolute top-5 right-5 border-2 border-grau-5 rounded-full p-1 hover:cursor-pointer"
+    className="absolute top-5 right-5 border-2 border-grau-5 rounded-full p-1 hover:cursor-pointer hover:animate-pulse"
     target="_blank"
   >
     <svg
