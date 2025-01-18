@@ -2,8 +2,10 @@
 
 import { cardProps } from "@/lib/types";
 import useMousePosition from "@/useHook/useMousePosition";
+import { Carousel, CarouselContent } from "./ui/carousel";
 import { CSSProperties, HTMLAttributes } from "react";
 import { twMerge } from "tailwind-merge";
+import Autoplay from "embla-carousel-autoplay";
 
 type fusiona = cardProps & HTMLAttributes<HTMLDivElement>;
 interface WorkProps extends fusiona {
@@ -53,16 +55,27 @@ export default function WorkFollowCard({
         </span>
       </div>
       <div className="content flex flex-col gap-2 rounded-md bg-gradient-to-b from-[rgba(235,172,51,0.12)] to-[rgba(221,194,142,0.6)] px-2 py-3 backdrop-blur-md">
-        <div className="badgeList flex animate-slide flex-row gap-2 whitespace-nowrap">
-          {teck.map((t: string) => (
-            <span
-              className="badge ml-10 rounded-2xl bg-gradient-to-r from-grau-1 via-grau-2 to-grau-5 px-4 py-2 text-white text-xs font-bold"
-              key={t}
-            >
-              {t}
-            </span>
-          ))}
-        </div>
+        <Carousel
+          plugins={[
+            Autoplay({
+              delay: 2000,
+            }),
+          ]}
+          className="w-full"
+        >
+          <CarouselContent className="ml-4 gap-8">
+            {teck.map((t: string) => (
+              <span
+                className="badge rounded-2xl bg-gradient-to-r from-grau-1
+                                via-grau-2 to-grau-5 px-4 py-2 text-white text-xs
+                                font-bold whitespace-nowrap "
+                key={t}
+              >
+                {t}
+              </span>
+            ))}
+          </CarouselContent>
+        </Carousel>
         <p className="text-grau-0">{descriptions}</p>
       </div>
     </div>

@@ -101,10 +101,9 @@ export const workData: WorkProps[] = [
     title: "Russion Push up Prorgam",
     descriptions:
       "Um app de calcular um programa de flexão de duas semanas, para aumentar o peito e numero maximo de flexão.",
-    image:
-      "https://evilrussianprogramcalculator.vercel.app/assets/svgs/logo.svg",
+    image: "/assets/Evil_Russian_Print.png",
     role: "Frontend",
-    teck: ["Ionic", "Angular", "Firebase"],
+    teck: ["Ionic", "Angular"],
     githubRep: "https://github.com/EyzRyder/evil_russian_program_calculator",
   },
 ];

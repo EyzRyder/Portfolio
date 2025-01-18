@@ -42,23 +42,13 @@ function WorkCard({
                     flex flex-col justify-center items-center"
         >
           <PCFrame>
-            <a href={workData.url || ""} target="_blank">
-              <Tilt
-                options={defaultOptions}
-                className="tilt group-hover/card:absolute group-hover:z-[2]
-                            w-full h-full"
-              >
-                <Image
-                  src={workData.image}
-                  alt="image"
-                  width={576}
-                  height={368}
-                  className="cover pointer-events-none rounded-2xl object-cover
-                        object-center transition duration-300 ease-in-out
-                        w-full h-full border-8 border-black"
-                />
-              </Tilt>
-            </a>
+            {workData.url ? (
+              <a href={workData.url} target={workData.url}>
+                <TiltCard imageUrl={workData.image} />
+              </a>
+            ) : (
+              <TiltCard imageUrl={workData.image} />
+            )}
           </PCFrame>
         </div>
 
@@ -146,4 +136,23 @@ const GithubIcon = ({ link }: { link: string }) => (
     </svg>
   </a>
 );
+
+const TiltCard = ({ imageUrl }: { imageUrl: string }) => (
+  <Tilt
+    options={defaultOptions}
+    className="tilt group-hover/card:absolute group-hover:z-[2]
+                            w-full h-full"
+  >
+    <Image
+      src={imageUrl}
+      alt="image"
+      width={576}
+      height={368}
+      className="cover pointer-events-none rounded-2xl object-cover
+                        object-center transition duration-300 ease-in-out
+                        w-full h-full border-8 border-black"
+    />
+  </Tilt>
+);
+
 export { WorkCard };
