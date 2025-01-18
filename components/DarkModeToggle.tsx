@@ -1,5 +1,5 @@
 "use client";
-import { SunMoon } from "lucide-react";
+import { Moon, Sun } from "lucide-react";
 import { GlassEffectWrapper } from "./GlassEffectWrapper";
 import { NavBtn } from "./Nav";
 import { useEffect, useState } from "react";
@@ -31,7 +31,11 @@ function DarkModeToggle() {
   return (
     <GlassEffectWrapper>
       <NavBtn onClick={toggleTheme}>
-        <SunMoon className="text-grau-0 dark:text-zinc-100 hover:text-grau-3 dark:hover:text-grau-5" />
+        {theme == "dark" ? (
+          <Sun className="text-grau-0 dark:text-zinc-100 hover:text-grau-3 dark:hover:text-grau-5" />
+        ) : (
+          <Moon className="text-grau-0 dark:text-zinc-100 hover:text-grau-3 dark:hover:text-grau-5" />
+        )}
       </NavBtn>
     </GlassEffectWrapper>
   );
