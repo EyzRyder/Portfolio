@@ -2,6 +2,28 @@ import { WorkProps } from "@/lib/types";
 
 export const workData: WorkProps[] = [
   {
+    _id: "Aqz7bgMLmxbn7zG5yl12",
+    url: "https://quizetec.vercel.app/",
+    title: "Quiz Etec",
+    descriptions:
+      "Quiz Etec é uma plataforma online que permite aos professores criar quizzes interativos e personalizados para avaliar o aprendizado dos seus alunos",
+    image: "/assets/QuizeTec.webp",
+    role: "FullStack",
+    teck: ["React", "Typescript", "Ionic", "Tailwindcss", "Zustand"],
+    githubRep: "https://github.com/EyzRyder/QuizeTec",
+  },
+  {
+    _id: "Aqz7bgMLmxbn7zG5yl13",
+    url: null,
+    title: "AutoRewardsBing",
+    descriptions:
+      "Automação de pesquisa feito com Playwright, a Microsoft possui um sistema de pontos com o bing, e é necessário uma quantia de pesquisas diárias totais para pegar mais pontos.",
+    image: "/assets/AutoBing.gif",
+    role: "Automazation",
+    teck: ["Javascript", "PlayWright"],
+    githubRep: "https://github.com/EyzRyder/AutoRewardsBing",
+  },
+  {
     _id: "Aqz7bgMLmxbn7zG5yldO",
     url: "https://cepapi-gb.vercel.app/",
     title: "CEPAPI",
