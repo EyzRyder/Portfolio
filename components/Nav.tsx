@@ -1,12 +1,7 @@
 import Image from "next/image";
 import { AnchorHTMLAttributes, ReactNode } from "react";
 import logo from "@/assets/mainLogo.svg";
-import {
-  AppWindow,
-  ContactRound,
-  MessageSquareDot,
-  SunMoon,
-} from "lucide-react";
+import { AppWindow, ContactRound, MessageSquareDot } from "lucide-react";
 import { GlassEffectWrapper } from "./GlassEffectWrapper";
 import { DarkModeToggle } from "./DarkModeToggle";
 
