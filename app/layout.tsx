@@ -15,8 +15,9 @@ const cherry = Cherry({
 });
 
 export const metadata: Metadata = {
-  title: "Bessi",
-  description: "Portfolio de Desenvolvedor fullstack",
+  title: "Bessi Portfolio",
+  description:
+    "Descubra as habilidades de um desenvolvedor freelancer apaixonado por transformar ideias em realidade. Aqui, você encontrará uma coleção diversificada de projetos que demonstram minha expertise em desenvolvimento web e aplicativos móveis. Estou disponível para novos trabalhos e ansioso por desafios criativos. Entre em contato para discutir suas necessidades e começar a criar hoje mesmo!",
 };
 
 export default function RootLayout({
